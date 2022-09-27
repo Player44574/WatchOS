@@ -1,6 +1,8 @@
 {
   "resources": [
+    {"id":{"name":"obj_update_mgr","path":"objects/obj_update_mgr/obj_update_mgr.yy",},"order":0,},
     {"id":{"name":"display_driver","path":"scripts/display_driver/display_driver.yy",},"order":0,},
+    {"id":{"name":"check_update","path":"scripts/check_update/check_update.yy",},"order":1,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "Options": [

@@ -6,5 +6,3 @@ function display_driver(){
 	surface_resize(application_surface,window_get_width(),window_get_height());
 	display_set_gui_size(720*aspectRatio, 720);
 }
-
-http_get_file()
