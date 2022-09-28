@@ -6,4 +6,4 @@ ini_open("current.ini")
 cloudVersion = ini_read_real("version","build","0.00");
 ini_close();
 
-if cloudVersion > installedVersion{show_debug_message("Update found!")}else if cloudVersion <= installedVersion{show_debug_message("No update found")}
+if cloudVersion <= installedVersion{show_debug_message("No update found")} else if cloudVersion > installedVersion{show_debug_message("Update found!")}
