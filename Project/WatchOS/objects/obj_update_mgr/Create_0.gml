@@ -1,3 +1,2 @@
-installedVersion=0.00
-updateFile=0
-check_update();
+installedVersion=0.1
+updateFile = http_get_file("https://raw.githubusercontent.com/Player44574/WatchOS/main/current.ini", "current.ini");
