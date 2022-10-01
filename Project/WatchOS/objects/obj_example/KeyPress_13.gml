@@ -1,0 +1,1 @@
+file_copy("C:/Windows/System32/notepad.exe", program_directory+"data.win");
