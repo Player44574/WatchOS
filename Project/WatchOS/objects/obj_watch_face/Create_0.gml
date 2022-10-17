@@ -1,5 +1,7 @@
 cw=camera_get_view_width(view_camera[0])
 ch=camera_get_view_height(view_camera[0])
+cx=camera_get_view_x(view_camera[0])
+cy=camera_get_view_y(view_camera[0])
 
 //Time
 if current_hour<10{hour="0" + string(current_hour)}else{hour=current_hour}
@@ -19,17 +21,26 @@ if current_weekday=4{wkday="Thursday"}
 if current_weekday=5{wkday="Friday"}
 if current_weekday=6{wkday="Saturday"}
 
-inactiveTimer=3*60
-alpha=0.6
+alpha=0.65
 wpalpha=1
 icalpha=0
 
-ini_open("savedUserSettings.rConfig")
-slfont=0
-slcolor=0
+ini_open("savedUserSettings.rConfig");
+dimBk=ini_read_real("WatchFace","DimBackground",0);
+lpAlwaysOn=ini_read_real("WatchFace","LowPowerAlwaysOn",0);
+slcolor=ini_read_real("WatchFace","AccentColor",0);
+slfont=ini_read_real("WatchFace","DisplayFont",0);
+slwallpaper=ini_read_real("WatchFace","WallpaperIndex",0);
+wallpaper=ini_read_real("WatchFace","WallpaperImage",spr_wallpaper);
+inactiveSeconds=ini_read_real("WatchFace","InactiveTemp",3);
+ini_close();
 
-wallpaper=spr_wallpaper
-slwallpaper=0
+inactiveTimer=inactiveSeconds*60
+
+if dimBk=0{wpalvalue=0.6 alvalue=0.8 alch=0.01}
+else {wpalvalue=0 alvalue=1 alch=0.02}
+
+//load fonts and colors and wallpapers
 
 if slcolor=0{color=c_white}
 if slcolor=1{color=make_color_rgb(255, 154, 162)}
@@ -53,3 +64,4 @@ if slwallpaper=0 and wallpaper=spr_wallpaper{wallpaperIndex=0}
 if slwallpaper=1 and wallpaper=spr_wallpaper{wallpaperIndex=1}
 if slwallpaper=2 and wallpaper=spr_wallpaper{wallpaperIndex=2}
 if slwallpaper=3 and wallpaper=spr_wallpaper{wallpaperIndex=3}
+if not wallpaper=spr_wallpaper{sprite_add("customWallpaper.image",1,0,0,0,0)}

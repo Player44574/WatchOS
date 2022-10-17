@@ -1,5 +1,7 @@
 cw=camera_get_view_width(view_camera[0])
 ch=camera_get_view_height(view_camera[0])
+cx=camera_get_view_x(view_camera[0])
+cy=camera_get_view_y(view_camera[0])
 
 //Time
 if current_hour<10{hour="0" + string(current_hour)}else{hour=current_hour}
@@ -21,20 +23,26 @@ if current_weekday=6{wkday="Saturday"}
 
 if window_has_focus()=false{
 	if inactiveTimer>=0{inactiveTimer--}
-	else{watchInactive=true}
+	else{global.watchInactive=true}
 }else if window_has_focus()=true{
-	watchInactive=false
-	inactiveTimer=3*60
+	global.watchInactive=false
+	inactiveTimer=inactiveSeconds
 	room_speed=60
 }
-if watchInactive=true{if icalpha<0.8{icalpha+=0.02}}
-if watchInactive=false{if icalpha>0{icalpha-=0.05}}
+if global.watchInactive=true{if icalpha<alvalue{icalpha+=0.02}}
+if global.watchInactive=false{if icalpha>0{icalpha-=0.05}}
 
-if watchInactive=true and alpha<0.8{alpha+=0.01}
-else if watchInactive=false and alpha>0.6{alpha-=0.01}
+if global.watchInactive=true and alpha<alvalue{alpha+=alch}
+else if global.watchInactive=false and alpha>0.65{alpha-=alch}
 
-if watchInactive=true and wpalpha>0.6{wpalpha-=0.01}
-else if watchInactive=true {room_speed=1}
-else if watchInactive=false and wpalpha<1{wpalpha+=0.01}
+if global.watchInactive=true and wpalpha>wpalvalue{wpalpha-=alch}
+else if global.watchInactive=true {if lpAlwaysOn=1{room_speed=1}else{room_speed=15}}
+else if global.watchInactive=false and wpalpha<1{wpalpha+=alch}
 
-show_debug_message(string(program_directory) + "data.win")
+if global.watchInactive=false{
+	if point_in_rectangle(mouse_x,mouse_y,4,cx+ch-24-4,4+24,cy+ch-24-4+24){
+		if mouse_check_button_released(mb_any){
+			room_goto(rm_apps);
+		}
+	}
+}

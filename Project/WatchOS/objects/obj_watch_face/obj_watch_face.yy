@@ -25,8 +25,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "main",
+    "path": "folders/Objects/main.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_watch_face",
