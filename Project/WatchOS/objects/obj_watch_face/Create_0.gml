@@ -1,3 +1,10 @@
+global.version="0.1"
+global.versionstring="A1022G"
+//the version string is to identify th exact system version for example "A1022G"
+//A = Alpha, B = Beta, R = Release
+//1022 = Month and Year
+//G = This version is exclusive to GitHub, I = This version is both on GitHub and Itch
+
 cw=camera_get_view_width(view_camera[0])
 ch=camera_get_view_height(view_camera[0])
 cx=camera_get_view_x(view_camera[0])

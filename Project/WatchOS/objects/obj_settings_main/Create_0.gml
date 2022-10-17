@@ -9,6 +9,7 @@ ini_open("savedUserSettings.rConfig");
 dimBk=ini_read_real("WatchFace","DimBackground",0);
 lpAlwaysOn=ini_read_real("WatchFace","LowPowerAlwaysOn",0);
 inactiveSeconds=ini_read_real("WatchFace","InactiveTemp",3);
+source=ini_read_string("Options","UpdateSource","ITCH");
 ini_close();
 
 inactiveTimer=3*60

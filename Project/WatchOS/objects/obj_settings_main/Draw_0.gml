@@ -39,6 +39,14 @@ if page=1{
 	draw_text_transformed(256-16-4,48+32+18,inactiveTimer/60,0.4,0.4,0)
 	draw_button_watchOS(48+32+32,"Modo ahorro")
 	draw_sprite(spr_toggle,lpAlwaysOn,256-16-4,48+32+32+16)
+}else if page=5{
+	draw_button_watchOS(48,"WatchOS " + string(global.version) + " ("+string(global.versionstring)+")");
+}
+else if page=6{
+	if source="GitHub"{updateServerTXT=("Fuente: "+ string(source)+" (Beta)")}
+	else{updateServerTXT=("Fuente: "+ string(source)+" (Release)")}
+	
+	draw_button_watchOS(48,updateServerTXT);
 }
 
 //reset draw

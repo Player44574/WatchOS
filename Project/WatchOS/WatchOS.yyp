@@ -25,6 +25,7 @@
     {"id":{"name":"spr_music_icon","path":"sprites/spr_music_icon/spr_music_icon.yy",},"order":1,},
     {"id":{"name":"rm_settings","path":"rooms/rm_settings/rm_settings.yy",},"order":2,},
     {"id":{"name":"spr_back_icon","path":"sprites/spr_back_icon/spr_back_icon.yy",},"order":5,},
+    {"id":{"name":"draw_button_ext_watchOS","path":"scripts/draw_button_ext_watchOS/draw_button_ext_watchOS.yy",},"order":1,},
     {"id":{"name":"spr_settings_icon","path":"sprites/spr_settings_icon/spr_settings_icon.yy",},"order":4,},
     {"id":{"name":"fn_font2","path":"fonts/fn_font2/fn_font2.yy",},"order":11,},
     {"id":{"name":"spr_app_library","path":"sprites/spr_app_library/spr_app_library.yy",},"order":3,},

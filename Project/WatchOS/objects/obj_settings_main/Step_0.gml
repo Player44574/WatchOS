@@ -19,6 +19,7 @@ if point_in_rectangle(mouse_x,mouse_y,0,-6,0+48,-6+48){
 	if mouse_check_button_released(mb_any){
 		if page=1 or page=2 or page=3{room_goto(rm_apps)}
 		else if page=4{page=2}
+		else if page=5 or page=6{page=1}
 	}
 }
 if point_in_rectangle(mouse_x,mouse_y,0,144+6,0+48,144+6+48){
@@ -34,7 +35,18 @@ if point_in_rectangle(mouse_x,mouse_y,256-48,144+6,256,144+6+48){
 
 
 //page1
-
+if page=1{
+	if point_in_rectangle(mouse_x,mouse_y,0,48,256,48+32){
+		if mouse_check_button_released(mb_any){
+			page=5 minidelay=3
+		}
+	}
+	if point_in_rectangle(mouse_x,mouse_y,0,48+32,256,48+32+32){
+		if mouse_check_button_released(mb_any){
+			page=6 minidelay=3
+		}
+	}
+}
 //page2
 if page=2{
 	if point_in_rectangle(mouse_x,mouse_y,0,48,256,48+32){
@@ -78,6 +90,24 @@ if page=4 and minidelay=0{
 			ini_close();
 		}
 	}
-}else{
+}else if page=4 and minidelay>0{
+	minidelay--
+}
+
+//page6
+if page=6 and minidelay=0{
+	if point_in_rectangle(mouse_x,mouse_y,0,48,256,48+32){
+		if mouse_check_button_released(mb_any){
+			if source="GitHub"{source="ITCH"}
+			else{source="GitHub"}
+			
+			http_get_file("https://raw.githubusercontent.com/Player44574/WatchOS/main/current.ini", "current.ini");
+			
+			ini_open("savedUserSettings.rConfig");
+			ini_write_string("Options","UpdateSource",source);
+			ini_close();
+		}
+	}
+}else if page=6 and minidelay>0{
 	minidelay--
 }
