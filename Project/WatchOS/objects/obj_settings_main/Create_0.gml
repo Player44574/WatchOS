@@ -18,3 +18,5 @@ font=fn_font1
 color=c_white
 page=1
 minidelay=3
+CanUpdate=2
+updateCheck=0

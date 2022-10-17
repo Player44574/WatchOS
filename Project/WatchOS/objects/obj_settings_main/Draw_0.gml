@@ -25,11 +25,10 @@ if page=1{
 	draw_button_watchOS(48+32+32,"Bloquear con pin")
 }else if page=2{
 	draw_button_watchOS(48,"Opciones de Always ON")
-	draw_button_watchOS(48+32,"Pantalla avanzada")
+	draw_button_watchOS(48+32,"Ajustes de fondo")
 	draw_button_watchOS(48+32+32,"No molestar")
 }else if page=3{
-	draw_button_watchOS(48,"Personalizar reloj")
-	draw_button_watchOS(48+32,"Restaurar por defecto")
+	draw_button_watchOS(48,"Restaurar por defecto")
 }else if page=4{
 	draw_button_watchOS(48,"Ocultar fondo")
 	draw_sprite(spr_toggle,dimBk,256-16-4,48+16)
@@ -47,6 +46,19 @@ else if page=6{
 	else{updateServerTXT=("Fuente: "+ string(source)+" (Release)")}
 	
 	draw_button_watchOS(48,updateServerTXT);
+	
+	draw_set_valign(fa_center)
+	draw_set_halign(fa_center)
+	if CanUpdate=0{draw_button_ext_watchOS(4,ch/2,"No hay versiones\nnuevas",248,64)}
+	draw_set_valign(fa_top)
+	draw_set_halign(fa_left)
+	
+	draw_set_valign(fa_center)
+	draw_set_halign(fa_center)
+	if CanUpdate=1{draw_button_ext_watchOS(4,ch/2,"Version disponible\n" + string(cloudVersion),248,64)}
+	draw_set_valign(fa_top)
+	draw_set_halign(fa_left)
+	
 }
 
 //reset draw
