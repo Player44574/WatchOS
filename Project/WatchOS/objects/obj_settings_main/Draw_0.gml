@@ -22,11 +22,11 @@ draw_set_font(fn_font1)
 if page=1{
 	draw_button_watchOS(48,"Acerca de WatchOS")
 	draw_button_watchOS(48+32,"Actualizaciones")
-	draw_button_watchOS(48+32+32,"Bloquear con pin")
+	draw_button_watchOS(48+32+32,"No molestar")
 }else if page=2{
 	draw_button_watchOS(48,"Opciones de Always ON")
 	draw_button_watchOS(48+32,"Ajustes de fondo")
-	draw_button_watchOS(48+32+32,"No molestar")
+	draw_button_watchOS(48+32+32,"Idioma")
 }else if page=3{
 	draw_button_watchOS(48,"Restaurar por defecto")
 }else if page=4{

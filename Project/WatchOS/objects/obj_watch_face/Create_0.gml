@@ -1,5 +1,5 @@
 global.version="0.1"
-global.versionstring="A1022G"
+global.versionstring="A1022I"
 //the version string is to identify th exact system version for example "A1022G"
 //A = Alpha, B = Beta, R = Release
 //1022 = Month and Year
