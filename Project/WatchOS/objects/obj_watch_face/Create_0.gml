@@ -1,8 +1,9 @@
 global.version="0.1"
-global.versionstring="A1022I"
-//the version string is to identify th exact system version for example "A1022G"
+global.versionstring="A0101I"
+//the version string is to identify th exact system version for example "A0101I"
 //A = Alpha, B = Beta, R = Release
-//1022 = Month and Year
+//XX = kernel version
+//YY = patch
 //G = This version is exclusive to GitHub, I = This version is both on GitHub and Itch
 
 cw=camera_get_view_width(view_camera[0])
@@ -43,6 +44,8 @@ inactiveSeconds=ini_read_real("WatchFace","InactiveTemp",3);
 ini_close();
 
 inactiveTimer=inactiveSeconds*60
+timer=2*60
+personalize=0
 
 if dimBk=0{wpalvalue=0.6 alvalue=0.8 alch=0.01}
 else {wpalvalue=0 alvalue=1 alch=0.02}

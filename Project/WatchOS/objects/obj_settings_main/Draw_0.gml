@@ -55,7 +55,7 @@ else if page=6{
 	
 	draw_set_valign(fa_center)
 	draw_set_halign(fa_center)
-	if CanUpdate=1{draw_button_ext_watchOS(4,ch/2,"Version disponible\n" + string(cloudVersion),248,64)}
+	if CanUpdate=1{draw_button_ext_watchOS(4,ch/2,"Version disponible\n" + string(cloudVersion) + " (" + string(cloudBuild) + ")",248,64)}
 	draw_set_valign(fa_top)
 	draw_set_halign(fa_left)
 	
