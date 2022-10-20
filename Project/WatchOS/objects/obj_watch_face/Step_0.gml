@@ -23,7 +23,7 @@ if current_weekday=6{wkday="Saturday"}
 
 if window_has_focus()=false{
 	if inactiveTimer>=0{inactiveTimer--}
-	else{global.watchInactive=true personalize=0 timer=2*60}
+	else{global.watchInactive=true personalize=0 timer=2*60 perpage=0}
 }else if window_has_focus()=true{
 	global.watchInactive=false
 	inactiveTimer=inactiveSeconds
@@ -50,7 +50,7 @@ if global.watchInactive=false and personalize=0{
 if global.watchInactive=false{
 	if point_in_rectangle(mouse_x,mouse_y,cx+cw/2-72,cy+ch/2-48-20,cx+cw/2+72,cy+ch/2-24){
 		if mouse_check_button(mb_any) and personalize=0{
-			if timer<=0{personalize=1 timer=2*60}
+			if timer<=0{personalize=1 timer=2*60 perpage=0}
 			else{timer--}
 		}else if personalize=0 and not mouse_check_button(mb_any){
 			timer=2*60
@@ -58,7 +58,24 @@ if global.watchInactive=false{
 	}
 	if point_in_rectangle(mouse_x,mouse_y,0,0,256,ch/2-20){
 		if mouse_check_button_pressed(mb_any){
-			personalize=0 timer=2*60
+			personalize=0 timer=2*60 perpage=0
 		}
 	}
+	
+	if point_in_rectangle(mouse_x,mouse_y,ch/5*1-24,192-32,ch/5*1+24,192-8) and personalize=1{
+		if mouse_check_button_pressed(mb_any){
+			perpage=0
+		}
+	}
+	if point_in_rectangle(mouse_x,mouse_y,ch/5*3.4-24,192-32,ch/5*3.4+24,192-8) and personalize=1{
+		if mouse_check_button_pressed(mb_any){
+			perpage=1
+		}
+	}
+	if point_in_rectangle(mouse_x,mouse_y,ch/5*5.8-24,192-32,ch/5*5.8+24,192-8) and personalize=1{
+		if mouse_check_button_pressed(mb_any){
+			perpage=2
+		}
+	}
+
 }

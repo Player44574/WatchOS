@@ -31,6 +31,30 @@ if personalize=1{
 	draw_text_transformed(ch/5*1,192-16,"Fuente",0.3,0.3,0)
 	draw_text_transformed(ch/5*3.4,192-16,"Color",0.3,0.3,0)
 	draw_text_transformed(ch/5*5.8,192-16,"Fondo",0.3,0.3,0)
+	if perpage=0{draw_line(ch/5*1-24,192-8,ch/5*1+24,192-8)}
+	if perpage=1{draw_line(ch/5*3.4-24,192-8,ch/5*3.4+24,192-8)}
+	if perpage=2{draw_line(ch/5*5.8-24,192-8,ch/5*5.8+24,192-8)}
+	
+	if perpage=0{
+		//first row
+		draw_set_font(fn_font1)
+		draw_text_transformed(36,ch/2+4,"12",0.8,0.8,0)
+		draw_set_font(fn_font2)
+		draw_text_transformed(36+60,ch/2+4,"12",0.8,0.8,0)
+		draw_set_font(fn_font3)
+		draw_text_transformed(36+60+60,ch/2+-2,"12",0.8,0.8,0)
+		draw_set_font(fn_font4)
+		draw_text_transformed(36+60+60+60,ch/2+4,"12",0.8,0.8,0)
+		//second row
+		draw_set_font(fn_font5)
+		draw_text_transformed(36,ch/2+50,"12",0.8,0.8,0)
+		draw_set_font(fn_font6)
+		draw_text_transformed(36+60,ch/2+50,"12",0.8,0.8,0)
+		draw_set_font(fn_font7)
+		draw_text_transformed(36+60+60,ch/2+50,"12",0.8,0.8,0)
+		draw_set_font(fn_font8)
+		draw_text_transformed(36+60+60+60,ch/2+50,"12",0.8,0.8,0)
+	}
 }
 
 //reset draw
