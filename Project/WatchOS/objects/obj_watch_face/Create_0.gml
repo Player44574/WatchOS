@@ -1,5 +1,5 @@
 global.version="0.1"
-global.versionstring="A0101I"
+global.versionstring="A1029I"
 //the version string is to identify th exact system version for example "A0101I"
 //A = Alpha, B = Beta, R = Release
 //XX = kernel version

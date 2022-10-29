@@ -1,11 +1,5 @@
 //draw date and time
-draw_set_font(font)
-draw_set_color(color)
-draw_set_alpha(alpha)
-draw_set_halign(fa_center)
-draw_set_valign(fa_top)
-draw_text_transformed(cw/2,4,string(hour) + ":" + string(minute),0.5,0.5,0);
-draw_sprite(spr_back_icon,0,0,-6);
+draw_top_bar_ui(1);
 if page<=3{
 	draw_sprite(spr_back_icon,0,0,144+6);
 	draw_sprite_ext(spr_back_icon,0,256,144+6,-1,1,0,c_white,1);
@@ -13,11 +7,7 @@ if page<=3{
 }
 
 //reset draw
-draw_set_alpha(1)
-draw_set_color(c_white)
-draw_set_valign(fa_top)
-draw_set_halign(fa_left)
-draw_set_font(fn_font1)
+draw_reset();
 
 if page=1{
 	draw_button_watchOS(48,"Acerca de WatchOS")
@@ -62,8 +52,4 @@ else if page=6{
 }
 
 //reset draw
-draw_set_alpha(1)
-draw_set_color(c_white)
-draw_set_valign(fa_top)
-draw_set_halign(fa_left)
-draw_set_font(fn_font1)
+draw_reset();

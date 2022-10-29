@@ -15,7 +15,7 @@ if window_has_focus()=false{
 }else if window_has_focus()=true{
 	inactiveTimer=inactiveSeconds
 }
-if point_in_rectangle(mouse_x,mouse_y,0,-6,0+48,-6+48){
+if point_in_rectangle(mouse_x,mouse_y,0,0,0+48,28){
 	if mouse_check_button_released(mb_any){
 		if page=1 or page=2 or page=3{room_goto(rm_apps)}
 		else if page=4{page=2}
