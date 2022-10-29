@@ -18,7 +18,7 @@ function draw_top_bar_ui(action){
 	draw_rectangle(0,0,256,28,false)
 	draw_set_color(c_white)
 	draw_text_transformed(cw/2,0,string(hour) + ":" + string(minute),0.5,0.5,0);
-	draw_sprite(spr_back_icon,0,0,-10);
+	if action!=3{draw_sprite(spr_back_icon,0,0,-10);}
 	
 	//logic
 	if point_in_rectangle(mouse_x,mouse_y,0,0,0+48,28){
