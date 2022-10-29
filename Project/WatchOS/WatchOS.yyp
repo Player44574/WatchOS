@@ -1,11 +1,13 @@
 {
   "resources": [
+    {"id":{"name":"Sound1","path":"sounds/Sound1/Sound1.yy",},"order":0,},
     {"id":{"name":"spr_timer_icon","path":"sprites/spr_timer_icon/spr_timer_icon.yy",},"order":3,},
     {"id":{"name":"rm_boot_secuence","path":"rooms/rm_boot_secuence/rm_boot_secuence.yy",},"order":1,},
     {"id":{"name":"spr_toggle","path":"sprites/spr_toggle/spr_toggle.yy",},"order":6,},
     {"id":{"name":"fn_font7","path":"fonts/fn_font7/fn_font7.yy",},"order":6,},
     {"id":{"name":"rm_apps","path":"rooms/rm_apps/rm_apps.yy",},"order":1,},
     {"id":{"name":"draw_top_bar_ui","path":"scripts/draw_top_bar_ui/draw_top_bar_ui.yy",},"order":2,},
+    {"id":{"name":"obj_timer","path":"objects/obj_timer/obj_timer.yy",},"order":0,},
     {"id":{"name":"spr_alarm_icon","path":"sprites/spr_alarm_icon/spr_alarm_icon.yy",},"order":0,},
     {"id":{"name":"spr_stopwatch_icon","path":"sprites/spr_stopwatch_icon/spr_stopwatch_icon.yy",},"order":2,},
     {"id":{"name":"obj_watch_face","path":"objects/obj_watch_face/obj_watch_face.yy",},"order":0,},
@@ -22,6 +24,7 @@
     {"id":{"name":"fn_font4","path":"fonts/fn_font4/fn_font4.yy",},"order":3,},
     {"id":{"name":"draw_button_watchOS","path":"scripts/draw_button_watchOS/draw_button_watchOS.yy",},"order":0,},
     {"id":{"name":"spr_water_reminder_icon","path":"sprites/spr_water_reminder_icon/spr_water_reminder_icon.yy",},"order":5,},
+    {"id":{"name":"rm_timer","path":"rooms/rm_timer/rm_timer.yy",},"order":4,},
     {"id":{"name":"ExecuteShell","path":"extensions/ExecuteShell/ExecuteShell.yy",},"order":1,},
     {"id":{"name":"draw_reset","path":"scripts/draw_reset/draw_reset.yy",},"order":3,},
     {"id":{"name":"fn_font3","path":"fonts/fn_font3/fn_font3.yy",},"order":1,},
@@ -70,6 +73,7 @@
     {"roomId":{"name":"rm_apps","path":"rooms/rm_apps/rm_apps.yy",},},
     {"roomId":{"name":"rm_settings","path":"rooms/rm_settings/rm_settings.yy",},},
     {"roomId":{"name":"rm_pomodoro_timer","path":"rooms/rm_pomodoro_timer/rm_pomodoro_timer.yy",},},
+    {"roomId":{"name":"rm_timer","path":"rooms/rm_timer/rm_timer.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":1,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
@@ -91,6 +95,7 @@
     {"folderPath":"folders/Objects/main.yy","order":3,"resourceVersion":"1.0","name":"main","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/settings.yy","order":4,"resourceVersion":"1.0","name":"settings","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/pomodoro timer.yy","order":5,"resourceVersion":"1.0","name":"pomodoro timer","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Objects/timer.yy","order":6,"resourceVersion":"1.0","name":"timer","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},

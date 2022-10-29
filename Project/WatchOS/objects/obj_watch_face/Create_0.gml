@@ -45,10 +45,6 @@ ini_close();
 
 inactiveTimer=inactiveSeconds*60
 
-timer=2*60
-personalize=0
-perpage=0
-
 if dimBk=0{wpalvalue=0.6 alvalue=0.8 alch=0.01}
 else {wpalvalue=0 alvalue=1 alch=0.02}
 
