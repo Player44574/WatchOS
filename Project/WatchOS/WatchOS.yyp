@@ -22,6 +22,7 @@
     {"id":{"name":"spr_water_reminder_icon","path":"sprites/spr_water_reminder_icon/spr_water_reminder_icon.yy",},"order":5,},
     {"id":{"name":"ExecuteShell","path":"extensions/ExecuteShell/ExecuteShell.yy",},"order":1,},
     {"id":{"name":"fn_font3","path":"fonts/fn_font3/fn_font3.yy",},"order":1,},
+    {"id":{"name":"spr_pomodoro_timer_icon","path":"sprites/spr_pomodoro_timer_icon/spr_pomodoro_timer_icon.yy",},"order":7,},
     {"id":{"name":"spr_music_icon","path":"sprites/spr_music_icon/spr_music_icon.yy",},"order":1,},
     {"id":{"name":"rm_settings","path":"rooms/rm_settings/rm_settings.yy",},"order":2,},
     {"id":{"name":"spr_back_icon","path":"sprites/spr_back_icon/spr_back_icon.yy",},"order":5,},
