@@ -25,11 +25,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "timer",
-    "path": "folders/Objects/timer.yy",
+    "name": "stopwatch",
+    "path": "folders/Objects/stopwatch.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_timer",
+  "name": "obj_stopwatch",
   "tags": [],
   "resourceType": "GMObject",
 }

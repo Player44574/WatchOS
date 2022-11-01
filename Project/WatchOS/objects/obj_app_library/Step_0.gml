@@ -16,7 +16,7 @@ if point_in_rectangle(mouse_x,mouse_y,8,56,8+48,56+48){//alarm
 }
 if point_in_rectangle(mouse_x,mouse_y,8+48+14,56,8+48+14+48,56+48){//stopwatch
 	if mouse_check_button_released(mb_any){
-		room_goto(rm_main)
+		room_goto(rm_stopwatch)
 	}
 }
 if point_in_rectangle(mouse_x,mouse_y,8+48+14+48+14,56,8+48+14+48+14+48,56+48){//timer

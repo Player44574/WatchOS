@@ -21,10 +21,8 @@ function draw_top_bar_ui(action){
 	if action!=3{draw_sprite(spr_back_icon,0,0,-10);}
 	
 	//logic
-	if point_in_rectangle(mouse_x,mouse_y,0,0,0+48,28){
-		if mouse_check_button_released(mb_any){
-			if action=0{room_goto(rm_apps)}
-			if action=2{room_goto(rm_main)}
-		}
+	if point_in_rectangle(mouse_x,mouse_y,0,0,0+48,28) and mouse_check_button_released(mb_any){
+		if action=0{room_goto(rm_apps)}
+		if action=2{room_goto(rm_main)}
 	}
 }

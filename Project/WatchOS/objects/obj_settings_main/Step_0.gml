@@ -58,7 +58,17 @@ if page=2{
 }
 
 //page3
-
+if page=3{
+	if point_in_rectangle(mouse_x,mouse_y,0,48+32,256,48+32+32) and mouse_check_button_released(mb_any){
+		ini_open("savedUserSettings.rConfig");
+		ini_write_real("WatchFace","DimBackground",0);
+		ini_write_real("WatchFace","LowPowerAlwaysOn",0);
+		ini_write_real("WatchFace","InactiveTemp",3);
+		ini_write_string("Options","UpdateSource","ITCH");
+		ini_close();
+		game_restart();
+	}
+}
 //page4
 if page=4 and minidelay=0{
 	ini_open("savedUserSettings.rConfig");

@@ -73,3 +73,8 @@ if slwallpaper=1 and wallpaper=spr_wallpaper{wallpaperIndex=1}
 if slwallpaper=2 and wallpaper=spr_wallpaper{wallpaperIndex=2}
 if slwallpaper=3 and wallpaper=spr_wallpaper{wallpaperIndex=3}
 if not wallpaper=spr_wallpaper{sprite_add("customWallpaper.image",1,0,0,0,0)}
+
+global.timerMiniForm=0
+global.stopwatchMiniForm=0
+global.alarmMiniForm=0
+global.musicMiniForm=0
