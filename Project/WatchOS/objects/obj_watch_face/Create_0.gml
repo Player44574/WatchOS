@@ -1,10 +1,10 @@
-global.version="1.0"
-global.versionstring="R1030I"
-//the version string is to identify th exact system version for example "A0101I"
+global.version="0.9"
+global.versionstring="B10P40"
+//the version string is to identify th exact system version for example "A01I01"
 //A = Alpha, B = Beta, R = Release
 //XX = kernel version
+//I = inicial version, C = minimal bug release, P = major bug release
 //YY = patch
-//G = This version is exclusive to GitHub, I = This version is both on GitHub and Itch
 
 cw=camera_get_view_width(view_camera[0])
 ch=camera_get_view_height(view_camera[0])
@@ -40,17 +40,19 @@ slcolor=ini_read_real("WatchFace","AccentColor",0);
 slfont=ini_read_real("WatchFace","DisplayFont",0);
 slwallpaper=ini_read_real("WatchFace","WallpaperIndex",0);
 wallpaper=ini_read_real("WatchFace","WallpaperImage",spr_wallpaper);
-inactiveSeconds=ini_read_real("WatchFace","InactiveTemp",3);
+if os_type=os_windows{global.inactiveSeconds=ini_read_real("WatchFace","InactiveTemp",3*60);}
+if os_type=os_android{global.inactiveSeconds=ini_read_real("WatchFace","InactiveTemp",15*60);}
+global.activeAlwsON=ini_read_real("WatchFace","AlwaysOn",1);
 ini_close();
 
-inactiveTimer=inactiveSeconds*60
+inactiveTimer=global.inactiveSeconds
 
 if dimBk=0{wpalvalue=0.6 alvalue=0.8 alch=0.01}
 else {wpalvalue=0 alvalue=1 alch=0.02}
 
 //load fonts and colors and wallpapers
 
-if slcolor=0{color=c_white}
+if slcolor=0{color=make_color_rgb(230, 230, 230)}
 if slcolor=1{color=make_color_rgb(255, 154, 162)}
 if slcolor=2{color=make_color_rgb(255, 183, 178)}
 if slcolor=3{color=make_color_rgb(255, 218, 193)}

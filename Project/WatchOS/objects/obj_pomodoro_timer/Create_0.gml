@@ -1,4 +1,4 @@
-inactiveTimer=3*60
+inactiveTimer=global.inactiveSeconds
 alpha=1
 font=fn_font1
 color=c_white
@@ -19,3 +19,4 @@ pomodoroTimerStart=0;
 pomodoroBackgroundColor=c_green;
 inicialTimer=10;
 startedVariables=0;
+pause=0

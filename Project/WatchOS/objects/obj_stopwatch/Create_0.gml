@@ -1,4 +1,4 @@
-inactiveTimer=3*60
+inactiveTimer=global.inactiveSeconds
 alpha=1
 font=fn_font1
 color=c_white
@@ -7,3 +7,4 @@ color=c_white
 stopwatchStart=0;
 startedVariables=0;
 dTimePassed="00:00:00"
+pause=0

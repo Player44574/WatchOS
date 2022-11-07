@@ -16,6 +16,9 @@ if room=rm_stopwatch{
 	draw_top_bar_ui(1);
 	if stopwatchStart=0{draw_sprite(spr_start_stop_icon,0,256-24-7,2)}
 	else if stopwatchStart=1{draw_sprite(spr_start_stop_icon,1,256-24-7,2)}
+	
+	if stopwatchStart=1 and pause=0{draw_sprite(spr_start_stop_icon,2,256-24-7-24-4,2)}
+	if stopwatchStart=1 and pause=1{draw_sprite(spr_start_stop_icon,0,256-24-7-24-4,2)}
 }
 
 //reset draw

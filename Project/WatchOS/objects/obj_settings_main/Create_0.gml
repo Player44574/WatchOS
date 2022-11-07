@@ -10,9 +10,10 @@ dimBk=ini_read_real("WatchFace","DimBackground",0);
 lpAlwaysOn=ini_read_real("WatchFace","LowPowerAlwaysOn",0);
 inactiveSeconds=ini_read_real("WatchFace","InactiveTemp",3);
 source=ini_read_string("Options","UpdateSource","ITCH");
+alwON=ini_read_real("WatchFace","AlwaysOn",1);
 ini_close();
 
-inactiveTimer=3*60
+inactiveTimer=global.inactiveSeconds
 alpha=1
 font=fn_font1
 color=c_white
@@ -20,3 +21,5 @@ page=1
 minidelay=3
 CanUpdate=2
 updateCheck=0
+page8scroll=0
+page9scroll=0

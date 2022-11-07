@@ -21,14 +21,27 @@ if current_weekday=4{wkday="Thursday"}
 if current_weekday=5{wkday="Friday"}
 if current_weekday=6{wkday="Saturday"}
 
-if window_has_focus()=false{
-	if inactiveTimer>=0{inactiveTimer--}
-	else{global.watchInactive=true}
-}else if window_has_focus()=true{
-	global.watchInactive=false
-	inactiveTimer=inactiveSeconds
-	room_speed=60
-}
+if global.activeAlwsON=1{
+	if os_type=os_windows{
+		if window_has_focus()=false{
+			if inactiveTimer>=0{inactiveTimer--}
+			else{global.watchInactive=true}
+		}else if window_has_focus()=true{
+			global.watchInactive=false
+			inactiveTimer=global.inactiveSeconds
+			room_speed=60
+		}
+	}else if os_type=os_android{
+		if not mouse_check_button(mb_any){
+			if inactiveTimer>=0{inactiveTimer--}
+			else{global.watchInactive=true}
+		}else{
+			global.watchInactive=false
+			inactiveTimer=global.inactiveSeconds
+			room_speed=60
+		}
+	}
+
 if global.watchInactive=true{if icalpha<alvalue{icalpha+=0.02}}
 if global.watchInactive=false{if icalpha>0{icalpha-=0.05}}
 
@@ -38,6 +51,7 @@ else if global.watchInactive=false and alpha>0.65{alpha-=alch}
 if global.watchInactive=true and wpalpha>wpalvalue{wpalpha-=alch}
 else if global.watchInactive=true {if lpAlwaysOn=1{room_speed=1}else{room_speed=15}}
 else if global.watchInactive=false and wpalpha<1{wpalpha+=alch}
+}
 
 if global.watchInactive=false{
 	if point_in_rectangle(mouse_x,mouse_y,4,cx+ch-24-4,4+24,cy+ch-24-4+24){

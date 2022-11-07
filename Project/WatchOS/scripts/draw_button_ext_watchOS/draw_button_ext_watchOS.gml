@@ -9,7 +9,7 @@ function draw_button_ext_watchOS(_x, _y, _text, _width, _height){
 	draw_rectangle(_x,_y,_x+_width,_y+_height,true)
 	draw_set_valign(fa_center)
 	draw_set_halign(fa_center)
-	draw_text_transformed(_x+_width/2,_y+_height/2,_text,0.4,0.4,0)
+	draw_text_transformed(_x+_width/2,_y+_height/2+6,_text,0.4,0.4,0)
 	draw_set_valign(fa_top)
 	draw_set_halign(fa_left)
 }

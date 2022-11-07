@@ -36,5 +36,16 @@ if pomodoroTimerStart=0{draw_top_bar_ui(0);}else{draw_top_bar_ui(3);}
 if pomodoroTimerStart=0{draw_sprite(spr_start_stop_icon,0,256-24-7,2)}
 else if pomodoroTimerStart=1{draw_sprite(spr_start_stop_icon,1,256-24-7,2)}
 
+if pomodoroTimerStart=1 and pause=0{draw_sprite(spr_start_stop_icon,2,256-24-7-24-4,2)}
+if pomodoroTimerStart=1 and pause=1{draw_sprite(spr_start_stop_icon,0,256-24-7-24-4,2)}
+
+if pomodoroTimerStart=1{
+	if fase=0{draw_text_transformed(256/2,192/2-48,"Empezando...",0.5,0.5,0)}
+	if fase=1{draw_text_transformed(256/2,192/2-48,"¡A trabajar!",0.5,0.5,0)}
+	if fase=2{draw_text_transformed(256/2,192/2-48,"¡Hora de descansar!",0.5,0.5,0)}
+}else{
+	draw_text_transformed(66,36,"Trabajo",0.3,0.3,0)
+	draw_text_transformed(128+62,36,"Ralajación",0.3,0.3,0)
+}
 //reset draw
 draw_reset();

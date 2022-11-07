@@ -1,4 +1,4 @@
-inactiveTimer=3*60
+inactiveTimer=global.inactiveSeconds
 alpha=1
 font=fn_font1
 color=c_white
@@ -8,3 +8,4 @@ timerStart=0;
 minutes=1;
 hours=0;
 startedVariables=0;
+pause=0;

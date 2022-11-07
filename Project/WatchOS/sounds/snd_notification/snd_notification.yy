@@ -11,14 +11,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "Sound1.mp3",
+  "soundFile": "snd_notification.mp3",
   "duration": 0.940408,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Sound1",
+  "name": "snd_notification",
   "tags": [],
   "resourceType": "GMSound",
 }
