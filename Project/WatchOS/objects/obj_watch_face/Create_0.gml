@@ -1,15 +1,10 @@
-global.version="0.9"
-global.versionstring="B10P40"
+global.version="1.0"
+global.versionstring="B10P65"
 //the version string is to identify th exact system version for example "A01I01"
 //A = Alpha, B = Beta, R = Release
 //XX = kernel version
 //I = inicial version, C = minimal bug release, P = major bug release
 //YY = patch
-
-cw=camera_get_view_width(view_camera[0])
-ch=camera_get_view_height(view_camera[0])
-cx=camera_get_view_x(view_camera[0])
-cy=camera_get_view_y(view_camera[0])
 
 //Time
 if current_hour<10{hour="0" + string(current_hour)}else{hour=current_hour}
@@ -53,12 +48,12 @@ else {wpalvalue=0 alvalue=1 alch=0.02}
 //load fonts and colors and wallpapers
 
 if slcolor=0{color=make_color_rgb(230, 230, 230)}
-if slcolor=1{color=make_color_rgb(255, 154, 162)}
-if slcolor=2{color=make_color_rgb(255, 183, 178)}
-if slcolor=3{color=make_color_rgb(255, 218, 193)}
-if slcolor=4{color=make_color_rgb(226, 240, 203)}
-if slcolor=5{color=make_color_rgb(181, 234, 215)}
-if slcolor=6{color=make_color_rgb(199, 206, 234)}
+if slcolor=1{color=make_color_rgb(255, 150, 136)}
+if slcolor=2{color=make_color_rgb(255, 218, 158)}
+if slcolor=3{color=make_color_rgb(253, 253, 150)}
+if slcolor=4{color=make_color_rgb(165, 238,160)}
+if slcolor=5{color=make_color_rgb(178, 218, 250)}
+if slcolor=6{color=make_color_rgb(192, 160, 195)}
 if slcolor=7{color=make_color_rgb(68, 68, 68)}
 
 if slfont=0{font=fn_font1}

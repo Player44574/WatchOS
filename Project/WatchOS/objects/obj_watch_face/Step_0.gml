@@ -1,8 +1,3 @@
-cw=camera_get_view_width(view_camera[0])
-ch=camera_get_view_height(view_camera[0])
-cx=camera_get_view_x(view_camera[0])
-cy=camera_get_view_y(view_camera[0])
-
 //Time
 if current_hour<10{hour="0" + string(current_hour)}else{hour=current_hour}
 if current_minute<10{minute="0" + string(current_minute)}else{minute=current_minute}
@@ -54,7 +49,7 @@ else if global.watchInactive=false and wpalpha<1{wpalpha+=alch}
 }
 
 if global.watchInactive=false{
-	if point_in_rectangle(mouse_x,mouse_y,4,cx+ch-24-4,4+24,cy+ch-24-4+24){
+	if point_in_rectangle(mouse_x,mouse_y,4,global.ch-24-4,4+24,global.ch-24-4+24){
 		if mouse_check_button_released(mb_any){
 			room_goto(rm_apps);
 		}

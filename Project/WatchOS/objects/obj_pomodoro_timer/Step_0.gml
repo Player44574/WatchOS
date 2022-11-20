@@ -21,24 +21,26 @@ if pomodoroTimerStart=0{
 	if relaxingMinutes<10{drelaxingMinutes="0"+string(relaxingMinutes)}else{drelaxingMinutes=relaxingMinutes}
 	if relaxingHours<10{drelaxingHours="0"+string(relaxingHours)}else{drelaxingHours=relaxingHours}
 
-	if point_in_rectangle(mouse_x,mouse_y,24,64,24+32,64+24) and mouse_check_button_pressed(mb_any){if workingHours<23{workingHours+=1}else{workingHours=0}}
-	if point_in_rectangle(mouse_x,mouse_y,24+32+24,64,24+32+24+32,64+24) and mouse_check_button_pressed(mb_any){if workingMinutes<59{workingMinutes+=1}else if workingHours>=1{workingMinutes=0}else{workingMinutes=1}}
-	if point_in_rectangle(mouse_x,mouse_y,256-24-32,64,256-24-32+32,64+24) and mouse_check_button_pressed(mb_any){if relaxingMinutes<59{relaxingMinutes+=1}else if relaxingHours>=1{relaxingMinutes=0}else{relaxingMinutes=1}}
-	if point_in_rectangle(mouse_x,mouse_y,256-24-32-32-24,64,256-24-32-32-24+32,64+24) and mouse_check_button_pressed(mb_any){if relaxingHours<23{relaxingHours+=1}else{relaxingHours=0}}
+	if point_in_rectangle(mouse_x,mouse_y,global.cw/2-108+6,64,global.cw/2-108+6+32,64+24) and mouse_check_button_pressed(mb_any){if workingHours<23{workingHours+=1}else{workingHours=0}}
+	if point_in_rectangle(mouse_x,mouse_y,global.cw/2-56+6,64,global.cw/2-56+6+32,64+24) and mouse_check_button_pressed(mb_any){if workingMinutes<59{workingMinutes+=1}else if workingHours>=1{workingMinutes=0}else{workingMinutes=1}}
+	
+	if point_in_rectangle(mouse_x,mouse_y,global.cw/2+76,64,global.cw/2+76+32,64+24) and mouse_check_button_pressed(mb_any){if relaxingMinutes<59{relaxingMinutes+=1}else if relaxingHours>=1{relaxingMinutes=0}else{relaxingMinutes=1}}
+	if point_in_rectangle(mouse_x,mouse_y,global.cw/2+22,64,global.cw/2+22+32,64+24) and mouse_check_button_pressed(mb_any){if relaxingHours<23{relaxingHours+=1}else{relaxingHours=0}}
 
-	if point_in_rectangle(mouse_x,mouse_y,24,160-24,24+32,160+24-24) and mouse_check_button_pressed(mb_any){if workingHours>0{workingHours-=1}else{workingHours=23}}
-	if point_in_rectangle(mouse_x,mouse_y,24+32+24,160-24,24+32+24+32,160+24-24) and mouse_check_button_pressed(mb_any){if workingMinutes>1{workingMinutes-=1}else if workingHours>=1 and workingMinutes>0{workingMinutes-=1}else{workingMinutes=59}}
-	if point_in_rectangle(mouse_x,mouse_y,256-24-32,160-24,256-24-32+32,160+24-24) and mouse_check_button_pressed(mb_any){if relaxingMinutes>1{relaxingMinutes-=1}else if relaxingHours>=1 and relaxingMinutes>0{relaxingMinutes-=1}else{relaxingMinutes=59}}
-	if point_in_rectangle(mouse_x,mouse_y,256-24-32-32-24,160-24,256-24-32-32-24+32,160+24-24) and mouse_check_button_pressed(mb_any){if relaxingHours>0{relaxingHours-=1}else{relaxingHours=23}}
+	if point_in_rectangle(mouse_x,mouse_y,global.cw/2-108+6,160-24,global.cw/2-108+6+32,160+24-24) and mouse_check_button_pressed(mb_any){if workingHours>0{workingHours-=1}else{workingHours=23}}
+	if point_in_rectangle(mouse_x,mouse_y,global.cw/2-56+6,160-24,global.cw/2-56+6+32,160+24-24) and mouse_check_button_pressed(mb_any){if workingMinutes>1{workingMinutes-=1}else if workingHours>=1 and workingMinutes>0{workingMinutes-=1}else{workingMinutes=59}}
+	
+	if point_in_rectangle(mouse_x,mouse_y,global.cw/2+76,160-24,global.cw/2+76+32,160+24-24) and mouse_check_button_pressed(mb_any){if relaxingMinutes>1{relaxingMinutes-=1}else if relaxingHours>=1 and relaxingMinutes>0{relaxingMinutes-=1}else{relaxingMinutes=59}}
+	if point_in_rectangle(mouse_x,mouse_y,global.cw/2+22,160-24,global.cw/2+22+32,160+24-24) and mouse_check_button_pressed(mb_any){if relaxingHours>0{relaxingHours-=1}else{relaxingHours=23}}
 
 	if workingMinutes=0 and workingHours=0{workingMinutes=1}
 	if relaxingMinutes=0 and relaxingHours=0{relaxingMinutes=1}
 }
 
-if point_in_rectangle(mouse_x,mouse_y,256-24-7,2,256-24-7+24,2+24) and mouse_check_button_pressed(mb_any) and pomodoroTimerStart=0{pomodoroTimerStart=1;}
-else if point_in_rectangle(mouse_x,mouse_y,256-24-7,2,256-24-7+24,2+24) and mouse_check_button_pressed(mb_any) and pomodoroTimerStart=1{pomodoroTimerStart=0; startedVariables=0;}
+if point_in_rectangle(mouse_x,mouse_y,global.cw-24-7,2,global.cw-24-7+24,2+24) and mouse_check_button_pressed(mb_any) and pomodoroTimerStart=0{pomodoroTimerStart=1;}
+else if point_in_rectangle(mouse_x,mouse_y,global.cw-24-7,2,global.cw-24-7+24,2+24) and mouse_check_button_pressed(mb_any) and pomodoroTimerStart=1{pomodoroTimerStart=0; startedVariables=0;}
 
-if pomodoroTimerStart=1 and point_in_rectangle(mouse_x,mouse_y,256-24-7-24-4,2,256-24-7-4,2+24) and mouse_check_button_pressed(mb_any){if pause=0{pause=1}else{pause=0}}
+if pomodoroTimerStart=1 and point_in_rectangle(mouse_x,mouse_y,global.cw-24-7-24-4,2,global.cw-24-7-4,2+24) and mouse_check_button_pressed(mb_any){if pause=0{pause=1}else{pause=0}}
 
 if pomodoroTimerStart=1{
 	if startedVariables=0{

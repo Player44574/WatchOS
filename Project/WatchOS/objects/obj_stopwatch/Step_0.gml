@@ -15,10 +15,10 @@ if stopwatchStart=0{
 	if point_in_rectangle(mouse_x,mouse_y,0,0,0+48,28) and mouse_check_button_released(mb_any){room_goto(rm_apps) instance_destroy()}
 }
 if room=rm_stopwatch{
-	if point_in_rectangle(mouse_x,mouse_y,256-24-7,2,256-24-7+24,2+24) and mouse_check_button_pressed(mb_any) and stopwatchStart=0{stopwatchStart=1; timePassed=0; dTimePassed="00:00:00"}
-	else if point_in_rectangle(mouse_x,mouse_y,256-24-7,2,256-24-7+24,2+24) and mouse_check_button_pressed(mb_any) and stopwatchStart=1{stopwatchStart=0; startedVariables=0; timePassed=0; dTimePassed="00:00:00"}
+	if point_in_rectangle(mouse_x,mouse_y,global.cw-24-7,2,global.cw-24-7+24,2+24) and mouse_check_button_pressed(mb_any) and stopwatchStart=0{stopwatchStart=1; timePassed=0; dTimePassed="00:00:00"}
+	else if point_in_rectangle(mouse_x,mouse_y,global.cw-24-7,2,global.cw-24-7+24,2+24) and mouse_check_button_pressed(mb_any) and stopwatchStart=1{stopwatchStart=0; startedVariables=0; timePassed=0; dTimePassed="00:00:00"}
 	
-	if stopwatchStart=1 and point_in_rectangle(mouse_x,mouse_y,256-24-7-24-4,2,256-24-7-4,2+24) and mouse_check_button_pressed(mb_any){if pause=0{pause=1}else{pause=0}}
+	if stopwatchStart=1 and point_in_rectangle(mouse_x,mouse_y,global.cw-24-7-24-4,2,global.cw-24-7-4,2+24) and mouse_check_button_pressed(mb_any){if pause=0{pause=1}else{pause=0}}
 }
 
 if stopwatchStart=1{

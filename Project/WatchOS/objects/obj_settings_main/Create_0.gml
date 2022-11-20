@@ -11,6 +11,8 @@ lpAlwaysOn=ini_read_real("WatchFace","LowPowerAlwaysOn",0);
 inactiveSeconds=ini_read_real("WatchFace","InactiveTemp",3);
 source=ini_read_string("Options","UpdateSource","ITCH");
 alwON=ini_read_real("WatchFace","AlwaysOn",1);
+slcolor=ini_read_real("WatchFace","AccentColor",0);
+slfont=ini_read_real("WatchFace","DisplayFont",0);
 ini_close();
 
 inactiveTimer=global.inactiveSeconds
@@ -21,5 +23,6 @@ page=1
 minidelay=3
 CanUpdate=2
 updateCheck=0
-page8scroll=0
-page9scroll=0
+iniScroll=0
+pageScroll=0
+scrollClampSpeed=16

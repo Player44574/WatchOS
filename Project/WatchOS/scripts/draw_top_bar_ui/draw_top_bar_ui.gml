@@ -15,7 +15,7 @@ function draw_top_bar_ui(action){
 	draw_set_halign(fa_center)
 	draw_set_valign(fa_top)
 	draw_set_color(c_dkgrey)
-	draw_rectangle(0,0,256,28,false)
+	draw_rectangle(0,0,global.cw,28,false)
 	draw_set_color(c_white)
 	draw_text_transformed(cw/2,0,string(hour) + ":" + string(minute),0.5,0.5,0);
 	if action!=3{draw_sprite(spr_back_icon,0,0,-10);}
