@@ -6,4 +6,6 @@ if source="GitHub"{cloudBuild = ini_read_string("build","GitBuild","A0000G");}
 else{cloudBuild = ini_read_string("build","ItchBuild","R0000I");}
 ini_close();
 
-if cloudVersion <= global.version{CanUpdate=0} else if cloudVersion > global.version{CanUpdate=1}
+if cloudVersion = "0.0"{CanUpdate=3}
+
+//if cloudVersion <= global.version{CanUpdate=0} else if cloudVersion > global.version{CanUpdate=1}

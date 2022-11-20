@@ -46,6 +46,12 @@ if page=1{
 	draw_set_valign(fa_top)
 	draw_set_halign(fa_left)
 	
+	draw_set_valign(fa_center)
+	draw_set_halign(fa_center)
+	if CanUpdate=3{draw_button_ext_watchOS(4,ch/2,"Error con servidor\nde actualizaciones",248,64)}
+	draw_set_valign(fa_top)
+	draw_set_halign(fa_left)
+	
 }else if page=7{
 	draw_button_watchOS(48,"Fuente")
 	draw_button_watchOS(48+32,"Color")
