@@ -1,5 +1,5 @@
 global.version="1.0"
-global.versionstring="B10P65"
+global.versionstring="B10P66"
 //the version string is to identify th exact system version for example "A01I01"
 //A = Alpha, B = Beta, R = Release
 //XX = kernel version
@@ -35,6 +35,7 @@ slcolor=ini_read_real("WatchFace","AccentColor",0);
 slfont=ini_read_real("WatchFace","DisplayFont",0);
 slwallpaper=ini_read_real("WatchFace","WallpaperIndex",0);
 wallpaper=ini_read_real("WatchFace","WallpaperImage",spr_wallpaper);
+wallpaperFit=ini_read_real("WatchFace","wallpaperFit",0);
 if os_type=os_windows{global.inactiveSeconds=ini_read_real("WatchFace","InactiveTemp",3*60);}
 if os_type=os_android{global.inactiveSeconds=ini_read_real("WatchFace","InactiveTemp",15*60);}
 global.activeAlwsON=ini_read_real("WatchFace","AlwaysOn",1);

@@ -19,7 +19,7 @@ if point_in_rectangle(mouse_x,mouse_y,0,0,0+48,28){
 		if page=1{room_goto(rm_apps)}
 		else if page=4 or page=5 or page=7{page=1 iniScroll=0 pageScroll=0}
 		else if page=6{page=1 CanUpdate=2 updateCheck=0 iniScroll=0 pageScroll=0}
-		else if page=8 or page=9{page=7}
+		else if page=8 or page=9 or page=10 or page=11{page=7}
 	}
 }
 
@@ -157,6 +157,20 @@ if page=7 and minidelay=0{
 	if point_in_rectangle(mouse_x,mouse_y,0,48+32,global.cw,48+32+32){
 		if mouse_check_button_released(mb_any){
 			page=9 minidelay=3
+			iniScroll=0
+			pageScroll=0
+		}
+	}
+	if point_in_rectangle(mouse_x,mouse_y,0,48+32+32,global.cw,48+32+32+32){
+		if mouse_check_button_released(mb_any){
+			page=11 minidelay=3
+			iniXScroll=0
+			pageXScroll=0
+		}
+	}
+	if point_in_rectangle(mouse_x,mouse_y,0,48+32+32+32,global.cw,48+32+32+32+32){
+		if mouse_check_button_released(mb_any){
+			page=10 minidelay=3
 			iniScroll=0
 			pageScroll=0
 		}
@@ -344,5 +358,59 @@ if page=9 and minidelay=0{
 	ini_open("savedUserSettings.rConfig");
 	slcolor=ini_read_real("WatchFace","AccentColor",0);
 	slfont=ini_read_real("WatchFace","DisplayFont",0);
+	ini_close();
+}
+//page10
+if page=10 and minidelay=0{
+	if point_in_rectangle(mouse_x,mouse_y,0,48,global.cw,48+32){
+		if mouse_check_button_released(mb_any){
+			wallpaperFit=0
+			ini_open("savedUserSettings.rConfig");
+			ini_write_real("WatchFace","wallpaperFit",wallpaperFit);
+			ini_close();
+		}
+	}
+	if point_in_rectangle(mouse_x,mouse_y,0,48+32,global.cw,48+32+32){
+		if mouse_check_button_released(mb_any){
+			wallpaperFit=1
+			ini_open("savedUserSettings.rConfig");
+			ini_write_real("WatchFace","wallpaperFit",wallpaperFit);
+			ini_close();
+		}
+	}
+	if point_in_rectangle(mouse_x,mouse_y,0,48+32+32,global.cw,48+32+32+32){
+		if mouse_check_button_released(mb_any){
+			wallpaperFit=2
+			ini_open("savedUserSettings.rConfig");
+			ini_write_real("WatchFace","wallpaperFit",wallpaperFit);
+			ini_close();
+		}
+	}
+}else if page=10 and minidelay>0{
+	minidelay--
+	ini_open("savedUserSettings.rConfig");
+	wallpaperFit=ini_read_real("WatchFace","wallpaperFit",0);
+	ini_close();
+}
+//page11
+if page=11 and minidelay=0{
+	if point_in_rectangle(mouse_x,mouse_y,0-pageXScroll,48,32-pageXScroll,48+32){
+		if mouse_check_button_released(mb_any) and iniXScroll<2{
+			
+		}
+	}
+	
+	if mouse_check_button(mb_any){
+		if iniXScroll=0{myXpos=mouse_x iniXScroll=1 mouseXAccel=0}
+		
+		if mouse_y>myXpos+6 and iniXScroll=1{iniXScroll=2}
+		if mouse_y<myXpos-6 and iniXScroll=1{iniXScroll=2}
+		
+		if iniXScroll=2{if myXpos!=mouse_x{mouseXAccel=mouse_x-myXpos if pageXScroll<0 or pageXScroll-mouseXAccel<0{pageXScroll=0}else if pageXScroll>128 or pageXScroll-mouseXAccel>128{pageXScroll=128}else{pageXScroll-=clamp(mouseXAccel,-scrollClampSpeed,scrollClampSpeed)} myXpos=mouse_x}}
+	}else{iniXScroll=0}
+}else if page=11 and minidelay>0{
+	minidelay--
+	ini_open("savedUserSettings.rConfig");
+	
 	ini_close();
 }

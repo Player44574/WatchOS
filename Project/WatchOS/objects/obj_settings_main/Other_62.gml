@@ -7,5 +7,6 @@ else{cloudBuild = ini_read_string("build","ItchBuild","R0000I");}
 ini_close();
 
 if cloudVersion = "0.0"{CanUpdate=3}
-
-//if cloudVersion <= global.version{CanUpdate=0} else if cloudVersion > global.version{CanUpdate=1}
+else if cloudVersion <= global.version and cloudBuild=global.versionstring{CanUpdate=0}
+else if cloudVersion <= global.version and cloudBuild!=global.versionstring{CanUpdate=1}
+else if cloudVersion > global.version{CanUpdate=1}

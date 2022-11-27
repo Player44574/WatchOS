@@ -36,19 +36,19 @@ if page=1{
 	
 	draw_set_valign(fa_center)
 	draw_set_halign(fa_center)
-	if CanUpdate=0{draw_button_ext_watchOS(4,ch/2,"No hay versiones\nnuevas",248,64)}
+	if CanUpdate=0{draw_button_ext_watchOS(cw/2-125,ch/2,"No hay versiones\nnuevas",248,64)}
 	draw_set_valign(fa_top)
 	draw_set_halign(fa_left)
 	
 	draw_set_valign(fa_center)
 	draw_set_halign(fa_center)
-	if CanUpdate=1{draw_button_ext_watchOS(4,ch/2,"Version disponible\n" + string(cloudVersion) + " (" + string(cloudBuild) + ")",248,64)}
+	if CanUpdate=1{draw_button_ext_watchOS(cw/2-125,ch/2,"Version disponible\n" + string(cloudVersion) + " (" + string(cloudBuild) + ")",248,64)}
 	draw_set_valign(fa_top)
 	draw_set_halign(fa_left)
 	
 	draw_set_valign(fa_center)
 	draw_set_halign(fa_center)
-	if CanUpdate=3{draw_button_ext_watchOS(4,ch/2,"Error con servidor\nde actualizaciones",248,64)}
+	if CanUpdate=3{draw_button_ext_watchOS(cw/2-125,ch/2,"Error con servidor\nde actualizaciones",248,64)}
 	draw_set_valign(fa_top)
 	draw_set_halign(fa_left)
 	
@@ -93,6 +93,16 @@ if page=1{
 	else if slcolor=5{draw_sprite(spr_check_mark,0,global.cw-16-4,48+32+32+32+32+32+16-pageScroll)}
 	else if slcolor=6{draw_sprite(spr_check_mark,0,global.cw-16-4,48+32+32+32+32+32+32+16-pageScroll)}
 	else if slcolor=7{draw_sprite(spr_check_mark,0,global.cw-16-4,48+32+32+32+32+32+32+32+16-pageScroll)}
+}else if page=10{
+	draw_button_watchOS(48,"Ajustado")
+	draw_button_watchOS(48+32,"Estirado")
+	draw_button_watchOS(48+32+32,"Centrado")
+	
+	if wallpaperFit=0{draw_sprite(spr_check_mark,0,global.cw-16-4,48+16)}
+	if wallpaperFit=1{draw_sprite(spr_check_mark,0,global.cw-16-4,48+32+16)}
+	if wallpaperFit=2{draw_sprite(spr_check_mark,0,global.cw-16-4,48+32+32+16)}
+}else if page=11{
+	
 }
 
 //draw date and time

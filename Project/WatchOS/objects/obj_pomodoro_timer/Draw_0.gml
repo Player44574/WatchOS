@@ -45,7 +45,7 @@ if pomodoroTimerStart=1{
 	if fase=2{draw_text_transformed(global.cw/2,global.ch/2-48,"¡Hora de descansar!",0.5,0.5,0)}
 }else{
 	draw_text_transformed(global.cw/2-60,36,"Trabajo",0.3,0.3,0)
-	draw_text_transformed(global.cw/2+66,36,"Ralajación",0.3,0.3,0)
+	draw_text_transformed(global.cw/2+66,36,"Relajación",0.3,0.3,0)
 }
 //reset draw
 draw_reset();

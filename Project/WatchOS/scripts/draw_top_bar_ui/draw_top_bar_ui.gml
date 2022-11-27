@@ -9,13 +9,15 @@ function draw_top_bar_ui(action){
 	if current_minute<10{minute="0" + string(current_minute)}else{minute=current_minute}
 	
 	//draw interface
-	draw_set_font(font)
-	draw_set_color(color)
-	draw_set_alpha(alpha)
+	//draw_set_font(font)
+	//draw_set_color(color)
+	if room=rm_apps{draw_set_alpha(0.8)}
+	else{draw_set_alpha(1)}
 	draw_set_halign(fa_center)
 	draw_set_valign(fa_top)
-	draw_set_color(c_dkgrey)
+	draw_set_color(make_color_rgb(40, 42, 54))
 	draw_rectangle(0,0,global.cw,28,false)
+	draw_set_alpha(1)
 	draw_set_color(c_white)
 	draw_text_transformed(cw/2,0,string(hour) + ":" + string(minute),0.5,0.5,0);
 	if action!=3{draw_sprite(spr_back_icon,0,0,-10);}
