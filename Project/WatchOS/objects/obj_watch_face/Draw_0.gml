@@ -5,7 +5,7 @@ if wallpaperFit=2{draw_sprite_ext(wallpaper,wallpaperIndex,global.cw/2-sprite_ge
 
 //draw low power mode icon
 draw_set_alpha(icalpha)
-if lpAlwaysOn=1{draw_sprite(spr_low_power_mode,0,256-34,4)}
+if lpAlwaysOn=1{draw_sprite(spr_low_power_mode,0,global.cw-34,4)}
 draw_set_alpha(1)
 
 //draw date and time
@@ -24,9 +24,9 @@ else{draw_text_transformed(global.cw/2,global.ch/2-6,string(wkday) +", "+string(
 }catch(e){global.timerMiniForm=0}
 
 //draw app icon
-if global.watchInactive=false and window_get_height()<384{draw_sprite_ext(spr_app_library_s,0,4,global.ch-24-4,1,1,0,c_white,alpha)}
-if global.watchInactive=false and window_get_height()>=384 and window_get_height()<768{draw_sprite_ext(spr_app_library_m,0,4,global.ch-24-4,0.5,0.5,0,c_white,alpha)}
-if global.watchInactive=false and window_get_height()>768{draw_sprite_ext(spr_app_library_l,0,4,global.ch-24-4,0.25,0.25,0,c_white,alpha)}
+if global.watchInactive=false and window_get_height()<384{draw_sprite_ext(spr_app_library_s,0,4,global.ch-24-4,1,1,0,color,alpha)}
+if global.watchInactive=false and window_get_height()>=384 and window_get_height()<768{draw_sprite_ext(spr_app_library_m,0,4,global.ch-24-4,0.5,0.5,0,color,alpha)}
+if global.watchInactive=false and window_get_height()>768{draw_sprite_ext(spr_app_library_l,0,4,global.ch-24-4,0.25,0.25,0,color,alpha)}
 
 //reset draw
 draw_reset();

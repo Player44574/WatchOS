@@ -3,15 +3,18 @@ if timerStart=0{
 	draw_set_color(c_black)
 	draw_rectangle(0,0,global.cw,global.ch,false)
 
-	draw_sprite(spr_arrow,0,global.cw/2-48,64)
-	draw_sprite(spr_arrow,0,global.cw/2-48+32+24,64)
+	draw_sprite(spr_arrow,0,global.cw/2-64-16,64)
+	draw_sprite(spr_arrow,0,global.cw/2-16,64)
+	draw_sprite(spr_arrow,0,global.cw/2+64-16,64)
 
-	draw_sprite_ext(spr_arrow,0,global.cw/2-48,160,1,-1,0,c_white,1)
-	draw_sprite_ext(spr_arrow,0,global.cw/2-48+32+24,160,1,-1,0,c_white,1)
+	draw_sprite_ext(spr_arrow,0,global.cw/2-16,160,1,-1,0,c_white,1)
+	draw_sprite_ext(spr_arrow,0,global.cw/2-64-16,160,1,-1,0,c_white,1)
+	draw_sprite_ext(spr_arrow,0,global.cw/2+64-16,160,1,-1,0,c_white,1)
 
 	draw_set_color(c_white);
-	draw_text_transformed(global.cw/2-56,64+26,dHours,0.7,0.7,0)
-	draw_text_transformed(global.cw/2-48+32+18,64+26,dMinutes,0.7,0.7,0)
+	draw_text_transformed(global.cw/2-64-22,64+26,dHours,0.7,0.7,0)
+	draw_text_transformed(global.cw/2-22,64+26,dMinutes,0.7,0.7,0)
+	draw_text_transformed(global.cw/2+64-22,64+26,dSeconds,0.7,0.7,0)
 }else if room=rm_timer{
 	draw_set_color(c_black)
 	draw_rectangle(0,0,global.cw,global.ch,false)

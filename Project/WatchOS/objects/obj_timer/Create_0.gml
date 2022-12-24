@@ -5,7 +5,8 @@ color=c_white
 
 //timer variables
 timerStart=0;
-minutes=1;
+seconds=1;
+minutes=0;
 hours=0;
 startedVariables=0;
 pause=0;

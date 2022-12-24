@@ -28,6 +28,7 @@ if page=1{
 	draw_sprite(spr_toggle,lpAlwaysOn,global.cw-16-4,48+32+32+16+32)
 }else if page=5{
 	draw_button_watchOS(48,"WatchOS " + string(global.version) + " ("+string(global.versionstring)+")");
+	draw_button_watchOS(48+32,"JPro404 2022");
 }else if page=6{
 	if source="GitHub"{updateServerTXT=("Fuente: "+ string(source)+" (Beta)")}
 	else{updateServerTXT=("Fuente: "+ string(source)+" (Release)")}

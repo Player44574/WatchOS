@@ -5,15 +5,8 @@ ch=camera_get_view_height(view_camera[0])
 if current_hour<10{hour="0" + string(current_hour)}else{hour=current_hour}
 if current_minute<10{minute="0" + string(current_minute)}else{minute=current_minute}
 
-if global.activeAlwsON=1{
-	if os_type=os_windows{
-		if window_has_focus()=false{if inactiveTimer>=0{inactiveTimer--}else{room_goto(rm_main) global.watchInactive=true}
-		}else if window_has_focus()=true{inactiveTimer=global.inactiveSeconds}
-	}else if os_type=os_android{
-		if not mouse_check_button(mb_any){if inactiveTimer>=0{inactiveTimer--}else{room_goto(rm_main) global.watchInactive=true}
-		}else{inactiveTimer=global.inactiveSeconds}
-	}
-}
+scr_inactive_detector();
+
 if point_in_rectangle(mouse_x,mouse_y,0,0,0+48,28){
 	if mouse_check_button_released(mb_any){
 		if page=1{room_goto(rm_apps)}
