@@ -13,8 +13,13 @@ if timerStart=0{
 
 	draw_set_color(c_white);
 	draw_text_transformed(global.cw/2-64-22,64+26,dHours,0.7,0.7,0)
+	//draw_text_transformed(global.cw/2-64+26,64+24,":",0.7,0.7,0)
+	draw_text_transformed(global.cw/2-64+26,64+40,"h",0.4,0.4,0)
 	draw_text_transformed(global.cw/2-22,64+26,dMinutes,0.7,0.7,0)
+	//draw_text_transformed(global.cw/2+26,64+24,":",0.7,0.7,0)
+	draw_text_transformed(global.cw/2+23,64+40,"m",0.4,0.4,0)
 	draw_text_transformed(global.cw/2+64-22,64+26,dSeconds,0.7,0.7,0)
+	draw_text_transformed(global.cw/2+64-22+44,64+40,"s",0.4,0.4,0)
 }else if room=rm_timer{
 	draw_set_color(c_black)
 	draw_rectangle(0,0,global.cw,global.ch,false)

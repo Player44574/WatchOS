@@ -17,21 +17,21 @@ if timerStart=0{
 	if minutes<10{dMinutes="0"+string(minutes)}else{dMinutes=minutes}
 	if hours<10{dHours="0"+string(hours)}else{dHours=hours}
 	
-	if point_in_rectangle(mouse_x,mouse_y,global.cw/2+64-32,64,global.cw/2+64,64+24) and mouse_check_button_pressed(mb_any){if seconds<59{seconds+=1}else if seconds>=1{seconds=0}else{seconds=1}}
-	if point_in_rectangle(mouse_x,mouse_y,global.cw/2+64-32,160-24,global.cw/2+64,160) and mouse_check_button_pressed(mb_any){if seconds>1{seconds-=1}else if seconds>=1 and seconds>0{seconds-=1}else{seconds=59}}
+	if point_in_rectangle(mouse_x,mouse_y,global.cw/2+64-16,64,global.cw/2+64+16,64+24) and mouse_check_button_pressed(mb_any){if seconds<59{seconds+=1}else if seconds>=1{seconds=0}else{seconds=1}}
+	if point_in_rectangle(mouse_x,mouse_y,global.cw/2+64-16,160-24,global.cw/2+64+16,160) and mouse_check_button_pressed(mb_any){if seconds>1{seconds-=1}else if minutes>=1 and seconds>0{seconds-=1}else{seconds=59}}
 
-	if point_in_rectangle(mouse_x,mouse_y,global.cw/2-48,64,global.cw/2-48+32,64+24) and mouse_check_button_pressed(mb_any){if minutes<59{minutes+=1}else{minutes=0}}
-	if point_in_rectangle(mouse_x,mouse_y,global.cw/2-48,160-24,global.cw/2-48+32,160) and mouse_check_button_pressed(mb_any){if minutes>0{minutes-=1}else{minutes=59}}
+	if point_in_rectangle(mouse_x,mouse_y,global.cw/2-16,64,global.cw/2+16,64+24) and mouse_check_button_pressed(mb_any){if minutes<59{minutes+=1}else{minutes=0}}
+	if point_in_rectangle(mouse_x,mouse_y,global.cw/2-16,160-24,global.cw/2+16,160) and mouse_check_button_pressed(mb_any){if minutes>=1{minutes-=1}else{minutes=59}}
 	
-	if point_in_rectangle(mouse_x,mouse_y,global.cw/2-64-32,64,global.cw/2-64-32,64+24) and mouse_check_button_pressed(mb_any){if hours<23{hours+=1}else{hours=0}}
-	if point_in_rectangle(mouse_x,mouse_y,global.cw/2-64-32,160-24,global.cw/2-64-32,160) and mouse_check_button_pressed(mb_any){if hours>0{hours-=1}else{hours=23}}
+	if point_in_rectangle(mouse_x,mouse_y,global.cw/2-64-16,64,global.cw/2-64+16,64+24) and mouse_check_button_pressed(mb_any){if hours<23{hours+=1}else{hours=0}}
+	if point_in_rectangle(mouse_x,mouse_y,global.cw/2-64-16,160-24,global.cw/2-64+16,160) and mouse_check_button_pressed(mb_any){if hours>0{hours-=1}else{hours=23}}
 	
 	if point_in_rectangle(mouse_x,mouse_y,0,0,0+48,28) and mouse_check_button_released(mb_any){room_goto(rm_apps) instance_destroy()}
 
-	if minutes=0 and hours=0{minutes=1}
+	if minutes=0 and seconds=0{seconds=1}
 }
 if room=rm_timer{
-	if point_in_rectangle(mouse_x,mouse_y,global.cw-24-7,2,global.cw-24-7+24,2+24) and mouse_check_button_pressed(mb_any) and timerStart=0{timerStart=1;}
+	if point_in_rectangle(mouse_x,mouse_y,global.cw-24-7,2,global.cw-24-7+24,2+24) and mouse_check_button_pressed(mb_any) and timerStart=0{timerStart=1; startedVariables=0}
 	else if point_in_rectangle(mouse_x,mouse_y,global.cw-24-7,2,global.cw-24-7+24,2+24) and mouse_check_button_pressed(mb_any) and timerStart=1{timerStart=0; startedVariables=0;}
 	
 	if timerStart=1 and point_in_rectangle(mouse_x,mouse_y,global.cw-24-7-24-4,2,global.cw-24-7-4,2+24) and mouse_check_button_pressed(mb_any){if pause=0{pause=1}else{pause=0}}
@@ -41,11 +41,11 @@ if timerStart=1{
 	if startedVariables=0{
 		startedVariables=1;
 		fase=0;
-		timeLeft=(hours*3600+minutes*60)*room_speed
+		timeLeft=(hours*3600+minutes*60+seconds)*room_speed
 		rs=room_speed
 	}
 	
-	if timeLeft>0 and pause=0{timeLeft-=rs/room_speed}else if pause=0{if global.timerMiniForm=0{timerStart=0}else{global.timerMiniForm=0 instance_destroy();}}
+	if timeLeft>0 and pause=0{timeLeft-=rs/room_speed}else if pause=0{if global.timerMiniForm=0{timerStart=0}else{global.timerMiniForm=0 instance_destroy(); }}
 
 	dhourTimeLeft=floor(timeLeft/3600/rs)
 	if dhourTimeLeft<10{dhourTimeLeft="0"+string(dhourTimeLeft)}else{dhourTimeLeft=dhourTimeLeft}

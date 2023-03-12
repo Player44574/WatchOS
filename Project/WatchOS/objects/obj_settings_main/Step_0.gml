@@ -10,7 +10,7 @@ scr_inactive_detector();
 if point_in_rectangle(mouse_x,mouse_y,0,0,0+48,28){
 	if mouse_check_button_released(mb_any){
 		if page=1{room_goto(rm_apps)}
-		else if page=4 or page=5 or page=7{page=1 iniScroll=0 pageScroll=0}
+		else if page=4 or page=5 or page=7 or page=12{page=1 iniScroll=0 pageScroll=0}
 		else if page=6{page=1 CanUpdate=2 updateCheck=0 iniScroll=0 pageScroll=0}
 		else if page=8 or page=9 or page=10 or page=11{page=7}
 	}
@@ -39,6 +39,11 @@ if page=1{
 		}
 	}
 	if point_in_rectangle(mouse_x,mouse_y,0,48+32+32+32+32+32+32+32-pageScroll,global.cw,48+32+32+32+32+32+32+32+32-pageScroll) and mouse_check_button_released(mb_any) and iniScroll<2{
+		if mouse_check_button_released(mb_any) and iniScroll<2{
+			page=12 minidelay=3
+		}
+	}
+	if point_in_rectangle(mouse_x,mouse_y,0,48+32+32+32+32+32+32+32+32-pageScroll,global.cw,48+32+32+32+32+32+32+32+32+32-pageScroll) and mouse_check_button_released(mb_any) and iniScroll<2{
 		ini_open("savedUserSettings.rConfig");
 		ini_write_real("WatchFace","DimBackground",0);
 		ini_write_real("WatchFace","LowPowerAlwaysOn",0);
@@ -406,4 +411,41 @@ if page=11 and minidelay=0{
 	ini_open("savedUserSettings.rConfig");
 	
 	ini_close();
+}
+//page12
+if page=12 and minidelay=0{
+	if point_in_rectangle(mouse_x,mouse_y,0,48,global.cw,48+32){
+		if mouse_check_button_released(mb_any){
+			ini_open("savedUserSettings.rConfig");
+			ini_write_real("Display","resolution",0);
+			ini_close();
+			obj_screen_service.selectedResolution=0
+		}
+	}
+	if point_in_rectangle(mouse_x,mouse_y,0,48+32,global.cw,48+32+32){
+		if mouse_check_button_released(mb_any){
+			ini_open("savedUserSettings.rConfig");
+			ini_write_real("Display","resolution",1);
+			ini_close();
+			obj_screen_service.selectedResolution=1
+		}
+	}
+	if point_in_rectangle(mouse_x,mouse_y,0,48+32+32,global.cw,48+32+32+32){
+		if mouse_check_button_released(mb_any){
+			ini_open("savedUserSettings.rConfig");
+			ini_write_real("Display","resolution",2);
+			ini_close();
+			obj_screen_service.selectedResolution=2
+		}
+	}
+	if point_in_rectangle(mouse_x,mouse_y,0,48+32+32+32,global.cw,48+32+32+32+32){
+		if mouse_check_button_released(mb_any){
+			ini_open("savedUserSettings.rConfig");
+			ini_write_real("Display","resolution",3);
+			ini_close();
+			obj_screen_service.selectedResolution=3
+		}
+	}
+}else if page=12 and minidelay>0{
+	minidelay--
 }

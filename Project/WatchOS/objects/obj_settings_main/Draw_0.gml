@@ -9,7 +9,8 @@ if page=1{
 	draw_button_watchOS(48+32+32+32+32-pageScroll,"No molestar")
 	draw_button_watchOS(48+32+32+32+32+32-pageScroll,"Sonidos")
 	draw_button_watchOS(48+32+32+32+32+32+32-pageScroll,"Idioma")
-	draw_button_watchOS(48+32+32+32+32+32+32+32-pageScroll,"Restaurar por defecto")
+	draw_button_watchOS(48+32+32+32+32+32+32+32-pageScroll,"Pantalla")
+	draw_button_watchOS(48+32+32+32+32+32+32+32+32-pageScroll,"Restaurar por defecto")
 }else if page=2{
 	
 }else if page=3{
@@ -28,7 +29,7 @@ if page=1{
 	draw_sprite(spr_toggle,lpAlwaysOn,global.cw-16-4,48+32+32+16+32)
 }else if page=5{
 	draw_button_watchOS(48,"WatchOS " + string(global.version) + " ("+string(global.versionstring)+")");
-	draw_button_watchOS(48+32,"JPro404 2022");
+	draw_button_watchOS(48+32,"JPro404 2023");
 }else if page=6{
 	if source="GitHub"{updateServerTXT=("Fuente: "+ string(source)+" (Beta)")}
 	else{updateServerTXT=("Fuente: "+ string(source)+" (Release)")}
@@ -104,6 +105,16 @@ if page=1{
 	if wallpaperFit=2{draw_sprite(spr_check_mark,0,global.cw-16-4,48+32+32+16)}
 }else if page=11{
 	
+}else if page=12{
+	draw_button_watchOS(48,"192p")
+	draw_button_watchOS(48+32,"240p")
+	draw_button_watchOS(48+32+32,"288p")
+	draw_button_watchOS(48+32+32+32,"360p")
+	
+	if obj_screen_service.selectedResolution=0{draw_sprite(spr_check_mark,0,global.cw-16-4,48+16)}
+	if obj_screen_service.selectedResolution=1{draw_sprite(spr_check_mark,0,global.cw-16-4,48+32+16)}
+	if obj_screen_service.selectedResolution=2{draw_sprite(spr_check_mark,0,global.cw-16-4,48+32+32+16)}
+	if obj_screen_service.selectedResolution=3{draw_sprite(spr_check_mark,0,global.cw-16-4,48+32+32+32+16)}
 }
 
 //draw date and time
