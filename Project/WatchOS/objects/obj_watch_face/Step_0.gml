@@ -17,14 +17,14 @@ if current_weekday=5{wkday="Friday"}
 if current_weekday=6{wkday="Saturday"}
 
 if global.activeAlwsON=1{
-	if os_type=os_windows{
-		if window_has_focus()=false{
+	if os_type=os_windows or os_type=os_linux{
+		if not mouse_check_button(mb_any){
 			if inactiveTimer>=0{inactiveTimer--}
 			else{global.watchInactive=true}
-		}else if window_has_focus()=true{
+		}else{
 			global.watchInactive=false
 			inactiveTimer=global.inactiveSeconds
-			room_speed=60
+			room_speed=global.hz
 		}
 	}else if os_type=os_android{
 		if not mouse_check_button(mb_any){
@@ -33,7 +33,7 @@ if global.activeAlwsON=1{
 		}else{
 			global.watchInactive=false
 			inactiveTimer=global.inactiveSeconds
-			room_speed=60
+			room_speed=global.hz
 		}
 	}
 

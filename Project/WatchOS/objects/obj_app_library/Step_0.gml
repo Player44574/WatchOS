@@ -20,19 +20,19 @@ if point_in_rectangle(mouse_x,mouse_y,global.cw/2-24+(96*global.cw/256),56,globa
 		room_goto(rm_pomodoro_timer)
 	}
 }
-if point_in_rectangle(mouse_x,mouse_y,8,64+48+8,8+48,64+48+8+48){//music
+if point_in_rectangle(mouse_x,mouse_y,global.cw/2-24-(96*global.cw/256),64+48+8,global.cw/2-24-(96*global.cw/256)+48,64+48+8+48){//music
 	if mouse_check_button_released(mb_any){
-		//room_goto(rm_main)
+		room_goto(rm_main)
 	}
 }
-if point_in_rectangle(mouse_x,mouse_y,8+48+14,64+48+8,8+48+14+48,64+48+8+48){//reminders
+if point_in_rectangle(mouse_x,mouse_y,global.cw/2-24-(32*global.cw/256),64+48+8,global.cw/2-24-(32*global.cw/256)+48,64+48+8+48){//reminders
 	if mouse_check_button_released(mb_any){
-		//room_goto(rm_main)
+		room_goto(rm_main)
 	}
 }
-if point_in_rectangle(mouse_x,mouse_y,8+48+14+48+14,64+48+8,8+48+14+48+14+48,64+48+8+48){//water reminders
+if point_in_rectangle(mouse_x,mouse_y,global.cw/2-24+(32*global.cw/256),64+48+8,global.cw/2-24+(32*global.cw/256)+48,64+48+8+48){//water reminders
 	if mouse_check_button_released(mb_any){
-		//room_goto(rm_main)
+		room_goto(rm_main)
 	}
 }
 if point_in_rectangle(mouse_x,mouse_y,global.cw/2-24+(96*global.cw/256),64+48+8,global.cw/2-24+(96*global.cw/256)+48,64+48+8+48){//setings

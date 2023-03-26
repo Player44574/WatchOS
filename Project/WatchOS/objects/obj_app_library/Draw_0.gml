@@ -9,9 +9,9 @@ draw_sprite(spr_alarm_icon,0,global.cw/2-24-(96*global.cw/256),56);
 draw_sprite(spr_stopwatch_icon,0,global.cw/2-24-(32*global.cw/256),56);
 draw_sprite(spr_timer_icon,0,global.cw/2-24+(32*global.cw/256),56);
 draw_sprite(spr_pomodoro_timer_icon,0,global.cw/2-24+(96*global.cw/256),56);
-//draw_sprite(spr_music_icon,0,8,64+48+8);
-//draw_sprite(spr_reminders_icon,0,8+48+14,64+48+8);
-//draw_sprite(spr_water_reminder_icon,0,8+48+14+48+14,64+48+8);
+draw_sprite(spr_metronome_icon,0,global.cw/2-24-(96*global.cw/256),64+48+8);
+draw_sprite(spr_counter_icon,0,global.cw/2-24-(32*global.cw/256),64+48+8);
+draw_sprite(spr_water_reminder_icon,0,global.cw/2-24+(32*global.cw/256),64+48+8);
 draw_sprite(spr_settings_icon,0,global.cw/2-24+(96*global.cw/256),64+48+8);
 //reset draw
 draw_reset();

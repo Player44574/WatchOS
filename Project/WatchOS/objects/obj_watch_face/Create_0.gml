@@ -7,6 +7,9 @@ global.yypatch="01"
 //I = inicial version, C = minimal bug release, P = major bug release
 //YY = patch
 
+//setRoomSpeed
+room_speed=global.hz
+
 //Time
 if current_hour<10{hour="0" + string(current_hour)}else{hour=current_hour}
 if current_minute<10{minute="0" + string(current_minute)}else{minute=current_minute}
@@ -37,8 +40,8 @@ slfont=ini_read_real("WatchFace","DisplayFont",0);
 slwallpaper=ini_read_real("WatchFace","WallpaperIndex",0);
 wallpaper=ini_read_real("WatchFace","WallpaperImage",spr_wallpaper);
 wallpaperFit=ini_read_real("WatchFace","wallpaperFit",0);
-if os_type=os_windows{global.inactiveSeconds=ini_read_real("WatchFace","InactiveTemp",3*60);}
-if os_type=os_android{global.inactiveSeconds=ini_read_real("WatchFace","InactiveTemp",15*60);}
+if os_type=os_windows or os_type=os_linux{global.inactiveSeconds=ini_read_real("WatchFace","InactiveTemp",3*global.hz);}
+if os_type=os_android{global.inactiveSeconds=ini_read_real("WatchFace","InactiveTemp",15*global.hz);}
 global.activeAlwsON=ini_read_real("WatchFace","AlwaysOn",1);
 ini_close();
 
@@ -68,10 +71,11 @@ if slfont=6{font=fn_font7}
 if slfont=7{font=fn_font8}
 
 if slwallpaper=0 and wallpaper=spr_wallpaper{wallpaperIndex=0}
-if slwallpaper=1 and wallpaper=spr_wallpaper{wallpaperIndex=1}
-if slwallpaper=2 and wallpaper=spr_wallpaper{wallpaperIndex=2}
-if slwallpaper=3 and wallpaper=spr_wallpaper{wallpaperIndex=3}
-if not wallpaper=spr_wallpaper{sprite_add("customWallpaper.image",1,0,0,0,0)}
+else if slwallpaper=1 and wallpaper=spr_wallpaper{wallpaperIndex=1}
+else if slwallpaper=2 and wallpaper=spr_wallpaper{wallpaperIndex=2}
+else if slwallpaper=3 and wallpaper=spr_wallpaper{wallpaperIndex=3}
+else if slwallpaper=4 and wallpaper=spr_wallpaper{wallpaperIndex=4}
+else {wallpaper=sprite_add("customWallpaper.image",1,0,0,0,0); wallpaperIndex=0}
 
 global.timerMiniForm=0
 global.stopwatchMiniForm=0

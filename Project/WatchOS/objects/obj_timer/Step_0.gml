@@ -1,5 +1,5 @@
-if global.activeAlwsON=1{
-	if os_type=os_windows{
+if global.activeAlwsON=1 and room!=rm_pomodoro_timer{
+	if os_type=os_windows or os_type=os_linux{
 		if window_has_focus()=false{
 			if inactiveTimer>=0{inactiveTimer--}
 			else{if room!=rm_main{room_goto(rm_main)} global.watchInactive=true if timerStart=0{instance_destroy()}else{global.timerMiniForm=1}}

@@ -11,7 +11,8 @@ wallpaperFit=ini_read_real("WatchFace","wallpaperFit",0);
 ini_close();
 
 if slwallpaper=0 and wallpaper=spr_wallpaper{wallpaperIndex=0}
-if slwallpaper=1 and wallpaper=spr_wallpaper{wallpaperIndex=1}
-if slwallpaper=2 and wallpaper=spr_wallpaper{wallpaperIndex=2}
-if slwallpaper=3 and wallpaper=spr_wallpaper{wallpaperIndex=3}
-if not wallpaper=spr_wallpaper{sprite_add("customWallpaper.image",1,0,0,0,0)}
+else if slwallpaper=1 and wallpaper=spr_wallpaper{wallpaperIndex=1}
+else if slwallpaper=2 and wallpaper=spr_wallpaper{wallpaperIndex=2}
+else if slwallpaper=3 and wallpaper=spr_wallpaper{wallpaperIndex=3}
+else if slwallpaper=4 and wallpaper=spr_wallpaper{wallpaperIndex=4}
+else {wallpaper=sprite_add("customWallpaper.image",0,0,0,0,0); wallpaperIndex=0}

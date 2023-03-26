@@ -1,8 +1,9 @@
 //draw wallpaper
-if wallpaperFit=0{draw_sprite_ext(wallpaper,wallpaperIndex,(global.cw*0)*global.cw/sprite_get_width(wallpaper),(global.ch*0)*global.cw/sprite_get_width(wallpaper),global.cw/sprite_get_width(wallpaper),global.cw/sprite_get_width(wallpaper),0,c_white,wpalpha);}
+if obj_screen_service.aspectRatio>=1{
+	if wallpaperFit=0{draw_sprite_ext(wallpaper,wallpaperIndex,(global.cw*0)*global.cw/sprite_get_width(wallpaper),(global.ch*0)*global.cw/sprite_get_width(wallpaper),global.cw/sprite_get_width(wallpaper),global.cw/sprite_get_width(wallpaper),0,c_white,wpalpha);}
+}
 if wallpaperFit=1{draw_sprite_ext(wallpaper,wallpaperIndex,0,0,global.cw/sprite_get_width(wallpaper),global.ch/sprite_get_height(wallpaper),0,c_white,wpalpha);}
 if wallpaperFit=2{draw_sprite_ext(wallpaper,wallpaperIndex,global.cw/2-sprite_get_width(wallpaper)/2,global.ch/2-sprite_get_height(wallpaper)/2,1,1,0,c_white,wpalpha);}
-
 //draw low power mode icon
 draw_set_alpha(icalpha)
 if lpAlwaysOn=1{draw_sprite(spr_low_power_mode,0,global.cw-34,4)}

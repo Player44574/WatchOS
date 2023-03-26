@@ -23,13 +23,16 @@ if page=1{
 	draw_button_watchOS(48+32+32,"Tiempo de espera")
 	draw_set_valign(fa_center)
 	draw_set_halign(fa_center)
-	if os_type=os_windows{draw_text_transformed(global.cw-16-4,48+32+18+32+2,string(global.inactiveSeconds/60)+"s",0.4,0.4,0)}
-	if os_type=os_android{draw_text_transformed(global.cw-16-12,48+32+18+32+2,string(global.inactiveSeconds/60)+"s",0.4,0.4,0)}
+	if os_type=os_windows or os_type=os_linux{draw_text_transformed(global.cw-16-4,48+32+18+32+2,string(global.inactiveSeconds/global.hz)+"s",0.4,0.4,0)}
+	if os_type=os_android{draw_text_transformed(global.cw-16-12,48+32+18+32+2,string(global.inactiveSeconds/global.hz)+"s",0.4,0.4,0)}
 	draw_button_watchOS(48+32+32+32,"Modo ahorro")
 	draw_sprite(spr_toggle,lpAlwaysOn,global.cw-16-4,48+32+32+16+32)
 }else if page=5{
-	draw_button_watchOS(48,"WatchOS " + string(global.version) + " ("+string(global.versionstring)+")");
-	draw_button_watchOS(48+32,"JPro404 2023");
+	draw_button_watchOS(48,"WatchOS " + string(global.version) + " ("+string(global.versionstring)+string(global.yypatch)+")");
+	if os_type=os_windows{draw_button_watchOS(48+32,"Host: Windows");}
+	if os_type=os_linux{draw_button_watchOS(48+32,"Host: Linux/Metal");}
+	if os_type=os_android{draw_button_watchOS(48+32,"Host: Android");}
+	draw_button_watchOS(48+32+32,"JPro404 2023");
 }else if page=6{
 	if source="GitHub"{updateServerTXT=("Fuente: "+ string(source)+" (Beta)")}
 	else{updateServerTXT=("Fuente: "+ string(source)+" (Release)")}
@@ -104,6 +107,20 @@ if page=1{
 	if wallpaperFit=1{draw_sprite(spr_check_mark,0,global.cw-16-4,48+32+16)}
 	if wallpaperFit=2{draw_sprite(spr_check_mark,0,global.cw-16-4,48+32+32+16)}
 }else if page=11{
+	draw_sprite_ext(spr_wallpaper,0,16,32,64/sprite_get_width(spr_wallpaper),64/sprite_get_height(spr_wallpaper),0,c_white,1)
+	draw_sprite_ext(spr_wallpaper,1,(global.cw/2)-32,32,64/sprite_get_width(spr_wallpaper),64/sprite_get_height(spr_wallpaper),0,c_white,1)
+	draw_sprite_ext(spr_wallpaper,2,global.cw-16-64,32,64/sprite_get_width(spr_wallpaper),64/sprite_get_height(spr_wallpaper),0,c_white,1)
+	draw_sprite_ext(spr_wallpaper,3,16,32+64+8,64/sprite_get_width(spr_wallpaper),64/sprite_get_height(spr_wallpaper),0,c_white,1)
+	draw_sprite_ext(spr_wallpaper,4,(global.cw/2)-32,32+64+8,64/sprite_get_width(spr_wallpaper),64/sprite_get_height(spr_wallpaper),0,c_white,1)
+	draw_sprite_ext(spr_wallpaper,5,global.cw-16-64,32+64+8,64/sprite_get_width(spr_wallpaper),64/sprite_get_height(spr_wallpaper),0,c_white,1)
+	draw_sprite_ext(spr_add_icon,0,global.cw-40-32,32+64+8+8,2,2,0,c_white,1)
+	
+	if wallpaperIndex=0 and wallpaper=spr_wallpaper{draw_sprite(spr_check_mark,0,16+12,32+12)}
+	if wallpaperIndex=1 and wallpaper=spr_wallpaper{draw_sprite(spr_check_mark,0,(global.cw/2)-32+12,32+12)}
+	if wallpaperIndex=2 and wallpaper=spr_wallpaper{draw_sprite(spr_check_mark,0,global.cw-16-64+12,32+12)}
+	if wallpaperIndex=3 and wallpaper=spr_wallpaper{draw_sprite(spr_check_mark,0,16+12,32+64+8+12)}
+	if wallpaperIndex=4 and wallpaper=spr_wallpaper{draw_sprite(spr_check_mark,0,(global.cw/2)-32+12,32+64+8+12)}
+	if wallpaper="custom"{draw_sprite(spr_check_mark,0,global.cw-16-64+12,32+64+8+12)}
 	
 }else if page=12{
 	draw_button_watchOS(48,"192p")

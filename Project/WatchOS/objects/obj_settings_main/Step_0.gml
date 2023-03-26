@@ -47,7 +47,7 @@ if page=1{
 		ini_open("savedUserSettings.rConfig");
 		ini_write_real("WatchFace","DimBackground",0);
 		ini_write_real("WatchFace","LowPowerAlwaysOn",0);
-		if os_type=os_windows{ini_write_real("WatchFace","InactiveTemp",3*60);}
+		if os_type=os_windows or os_type=os_linux{ini_write_real("WatchFace","InactiveTemp",3*60);}
 		if os_type=os_android{ini_write_real("WatchFace","InactiveTemp",15*60);}
 		ini_write_string("Options","UpdateSource","ITCH");
 		ini_write_real("WatchFace","AlwaysOn",1);
@@ -61,7 +61,7 @@ if page=1{
 		if mouse_y>mypos+6 and iniScroll=1{iniScroll=2}
 		if mouse_y<mypos-6 and iniScroll=1{iniScroll=2}
 		
-		if iniScroll=2{if mypos!=mouse_y{mouseYAccel=mouse_y-mypos if pageScroll<0 or pageScroll-mouseYAccel<0{pageScroll=0}else if pageScroll>128 or pageScroll-mouseYAccel>128{pageScroll=128}else{pageScroll-=clamp(mouseYAccel,-scrollClampSpeed,scrollClampSpeed)} mypos=mouse_y}}
+		if iniScroll=2{if mypos!=mouse_y{mouseYAccel=mouse_y-mypos if pageScroll<0 or pageScroll-mouseYAccel<0{pageScroll=0}else if pageScroll>160 or pageScroll-mouseYAccel>160{pageScroll=160}else{pageScroll-=clamp(mouseYAccel,-scrollClampSpeed,scrollClampSpeed)} mypos=mouse_y}}
 	}else{iniScroll=0}
 }
 //page2
@@ -102,8 +102,8 @@ if page=4 and minidelay=0{
 	}
 	if point_in_rectangle(mouse_x,mouse_y,0,48+32+32,global.cw,48+32+32+32){
 		if mouse_check_button_released(mb_any){
-			if os_type=os_windows{if global.inactiveSeconds=3*60{inactiveTimer=6*60}else if global.inactiveSeconds=6*60{inactiveTimer=9*60}else{inactiveTimer=3*60}}
-			if os_type=os_android{if global.inactiveSeconds=15*60{inactiveTimer=30*60}else if global.inactiveSeconds=30*60{inactiveTimer=60*60}else if global.inactiveSeconds=60*60{inactiveTimer=120*60}else{inactiveTimer=15*60}}
+			if os_type=os_windows or os_type=os_linux{if global.inactiveSeconds=3*global.hz{inactiveTimer=6*global.hz}else if global.inactiveSeconds=6*global.hz{inactiveTimer=9*global.hz}else{inactiveTimer=3*global.hz}}
+			if os_type=os_android{if global.inactiveSeconds=15*global.hz{inactiveTimer=30*global.hz}else if global.inactiveSeconds=30*global.hz{inactiveTimer=60*global.hz}else if global.inactiveSeconds=60*global.hz{inactiveTimer=120*global.hz}else{inactiveTimer=15*global.hz}}
 			global.inactiveSeconds=inactiveTimer
 			ini_open("savedUserSettings.rConfig");
 			ini_write_real("WatchFace","InactiveTemp",inactiveTimer);
@@ -162,8 +162,6 @@ if page=7 and minidelay=0{
 	if point_in_rectangle(mouse_x,mouse_y,0,48+32+32,global.cw,48+32+32+32){
 		if mouse_check_button_released(mb_any){
 			page=11 minidelay=3
-			iniXScroll=0
-			pageXScroll=0
 		}
 	}
 	if point_in_rectangle(mouse_x,mouse_y,0,48+32+32+32,global.cw,48+32+32+32+32){
@@ -392,24 +390,80 @@ if page=10 and minidelay=0{
 }
 //page11
 if page=11 and minidelay=0{
-	if point_in_rectangle(mouse_x,mouse_y,0-pageXScroll,48,32-pageXScroll,48+32){
-		if mouse_check_button_released(mb_any) and iniXScroll<2{
-			
+	if point_in_rectangle(mouse_x,mouse_y,16,32,16+64,32+64){
+		if mouse_check_button_released(mb_any){
+			ini_open("savedUserSettings.rConfig");
+			ini_write_real("WatchFace","WallpaperIndex",0);
+			ini_write_real("WatchFace","WallpaperImage",spr_wallpaper);
+			ini_close();
+			wallpaperIndex=0
+			wallpaper=spr_wallpaper
 		}
 	}
 	
-	if mouse_check_button(mb_any){
-		if iniXScroll=0{myXpos=mouse_x iniXScroll=1 mouseXAccel=0}
-		
-		if mouse_y>myXpos+6 and iniXScroll=1{iniXScroll=2}
-		if mouse_y<myXpos-6 and iniXScroll=1{iniXScroll=2}
-		
-		if iniXScroll=2{if myXpos!=mouse_x{mouseXAccel=mouse_x-myXpos if pageXScroll<0 or pageXScroll-mouseXAccel<0{pageXScroll=0}else if pageXScroll>128 or pageXScroll-mouseXAccel>128{pageXScroll=128}else{pageXScroll-=clamp(mouseXAccel,-scrollClampSpeed,scrollClampSpeed)} myXpos=mouse_x}}
-	}else{iniXScroll=0}
+	if point_in_rectangle(mouse_x,mouse_y,(global.cw/2)-32,32,(global.cw/2)-32+64,32+64){
+		if mouse_check_button_released(mb_any){
+			ini_open("savedUserSettings.rConfig");
+			ini_write_real("WatchFace","WallpaperIndex",1);
+			ini_write_real("WatchFace","WallpaperImage",spr_wallpaper);
+			ini_close();
+			wallpaperIndex=1
+			wallpaper=spr_wallpaper
+		}
+	}
+	
+	if point_in_rectangle(mouse_x,mouse_y,global.cw-16-64,32,global.cw-16-64+64,32+64){
+		if mouse_check_button_released(mb_any){
+			ini_open("savedUserSettings.rConfig");
+			ini_write_real("WatchFace","WallpaperIndex",2);
+			ini_write_real("WatchFace","WallpaperImage",spr_wallpaper);
+			ini_close();
+			wallpaperIndex=2
+			wallpaper=spr_wallpaper
+		}
+	}
+	
+	if point_in_rectangle(mouse_x,mouse_y,16,32+64+8,16+64,32+64+8+64){
+		if mouse_check_button_released(mb_any){
+			ini_open("savedUserSettings.rConfig");
+			ini_write_real("WatchFace","WallpaperIndex",3);
+			ini_write_real("WatchFace","WallpaperImage",spr_wallpaper);
+			ini_close();
+			wallpaperIndex=3
+			wallpaper=spr_wallpaper
+		}
+	}
+	
+	if point_in_rectangle(mouse_x,mouse_y,(global.cw/2)-32,32+64+8,(global.cw/2)-32+64,32+64+8+64){
+		if mouse_check_button_released(mb_any){
+			ini_open("savedUserSettings.rConfig");
+			ini_write_real("WatchFace","WallpaperIndex",4);
+			ini_write_real("WatchFace","WallpaperImage",spr_wallpaper);
+			ini_close();
+			wallpaperIndex=4
+			wallpaper=spr_wallpaper
+		}
+	}
+	
+	if point_in_rectangle(mouse_x,mouse_y,global.cw-16-64,32+64+8,global.cw-16-64+64,32+64+8+64){
+		if mouse_check_button_released(mb_any){
+			image=get_open_filename("image|*.png; *.jpg", "")
+			if image != ""{
+				file_copy(image,"customWallpaper.image")
+				ini_open("savedUserSettings.rConfig");
+				ini_write_real("WatchFace","WallpaperIndex",0);
+				ini_write_real("WatchFace","WallpaperImage",0);
+				ini_close();
+				wallpaperIndex=0
+				wallpaper="custom"
+			}
+		}
+	}
 }else if page=11 and minidelay>0{
 	minidelay--
 	ini_open("savedUserSettings.rConfig");
-	
+	wallpaperIndex=ini_read_real("WatchFace","WallpaperIndex",0);
+	wallpaper=ini_read_real("WatchFace","WallpaperImage",spr_wallpaper);
 	ini_close();
 }
 //page12
