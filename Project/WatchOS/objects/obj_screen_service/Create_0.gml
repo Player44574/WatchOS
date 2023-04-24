@@ -1,6 +1,7 @@
 ini_open("savedUserSettings.rConfig");
 selectedResolution=ini_read_real("Display","resolution",0);
 global.hz=ini_read_real("Display","frecuency",120);
+serviceEnable=ini_read_real("Developer","displayDriverEnable",1);
 ini_close();
 aspectRatio=window_get_width()/window_get_height();
 
