@@ -1,15 +1,3 @@
-global.version="0.1"
-global.versionstring="B10C"
-global.yypatch="01"
-//the version string is to identify the exact system version for example "A01I01"
-//A = Alpha, B = Beta, R = Release
-//XX = kernel version
-//I = inicial version, C = minimal bug release, P = major bug release
-//YY = patch
-
-//setRoomSpeed
-room_speed=global.hz
-
 //Time
 if current_hour<10{hour="0" + string(current_hour)}else{hour=current_hour}
 if current_minute<10{minute="0" + string(current_minute)}else{minute=current_minute}
@@ -81,3 +69,5 @@ global.timerMiniForm=0
 global.stopwatchMiniForm=0
 global.alarmMiniForm=0
 global.musicMiniForm=0
+
+dialtest=0

@@ -1,19 +1,5 @@
-if selectedResolution=0{
-	if aspectRatio>=1{resolution=192;}
-	else{resolution=480;}
-}
-if selectedResolution=1{
-	if aspectRatio>=1{resolution=240;}
-	else{resolution=600;}
-}
-if selectedResolution=2{
-	if aspectRatio>=1{resolution=288;}
-	else{resolution=720;}
-}
-if selectedResolution=3{
-	if aspectRatio>=1{resolution=360;}
-	else{resolution=900;}
-}
+if aspectRatio>=1{resolution=window_get_height()/scale}
+else{resolution=window_get_width()/scale}
 
 try{
 	if serviceEnable=1{
@@ -26,3 +12,4 @@ try{
 
 global.cw=camera_get_view_width(view_camera[0]);
 global.ch=camera_get_view_height(view_camera[0]);
+global.deltatime=60/global.hz

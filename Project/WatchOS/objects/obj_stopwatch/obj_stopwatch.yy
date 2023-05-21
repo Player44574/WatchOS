@@ -26,7 +26,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "stopwatch",
-    "path": "folders/Objects/stopwatch.yy",
+    "path": "folders/Objects/Apps/stopwatch.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_stopwatch",

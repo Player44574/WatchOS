@@ -27,7 +27,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "settings",
-    "path": "folders/Objects/settings.yy",
+    "path": "folders/Objects/Apps/settings.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_settings_main",
