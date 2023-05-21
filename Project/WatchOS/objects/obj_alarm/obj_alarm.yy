@@ -26,7 +26,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "alarm",
-    "path": "folders/Objects/alarm.yy",
+    "path": "folders/Objects/Apps/alarm.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_alarm",

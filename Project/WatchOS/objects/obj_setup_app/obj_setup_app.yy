@@ -25,11 +25,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Winterboard",
-    "path": "folders/Objects/Apps/Winterboard.yy",
+    "name": "setup",
+    "path": "folders/Objects/Apps/setup.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_app_library",
+  "name": "obj_setup_app",
   "tags": [],
   "resourceType": "GMObject",
 }

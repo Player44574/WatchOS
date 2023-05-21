@@ -26,7 +26,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "timer",
-    "path": "folders/Objects/timer.yy",
+    "path": "folders/Objects/Apps/timer.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_timer",

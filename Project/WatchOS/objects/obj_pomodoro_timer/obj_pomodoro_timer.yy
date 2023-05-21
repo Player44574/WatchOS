@@ -26,7 +26,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "pomodoro timer",
-    "path": "folders/Objects/pomodoro timer.yy",
+    "path": "folders/Objects/Apps/pomodoro timer.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_pomodoro_timer",
