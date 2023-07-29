@@ -1,0 +1,3 @@
+terminalText=""
+terminalName=""
+output=""

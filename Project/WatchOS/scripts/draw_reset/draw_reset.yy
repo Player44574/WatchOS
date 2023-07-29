@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Scripts.yy",
+    "name": "Time",
+    "path": "folders/Scripts/Time.yy",
   },
   "resourceVersion": "1.0",
   "name": "draw_reset",

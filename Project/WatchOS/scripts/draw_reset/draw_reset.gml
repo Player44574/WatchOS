@@ -7,3 +7,4 @@ function draw_reset(){
 	draw_set_halign(fa_left)
 	draw_set_font(fn_font1)
 }
+

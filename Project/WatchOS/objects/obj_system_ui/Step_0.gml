@@ -1,0 +1,1 @@
+if instance_exists(obj_standby_always_on){draw=1}else{draw=0}

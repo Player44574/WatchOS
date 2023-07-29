@@ -1,12 +1,14 @@
 ini_open("savedUserSettings.rConfig");
-scale=ini_read_real("Display","scale",2);
+scale=ini_read_real("Display","scale",0);
+iniScale=ini_read_real("Display","scale",0);
 global.hz=ini_read_real("Display","frecuency",60);
 serviceEnable=ini_read_real("Developer","displayDriverEnable",1);
 ini_close();
 aspectRatio=window_get_width()/window_get_height();
 global.cw=camera_get_view_width(view_camera[0]);
 global.ch=camera_get_view_height(view_camera[0]);
-window_set_size(256,192)
+window_set_size(640,360)
+alpha=0
 
 //setRoomSpeed
 room_speed=global.hz
