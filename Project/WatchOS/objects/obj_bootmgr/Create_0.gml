@@ -10,6 +10,9 @@ global.yypatch="00"
 //bootMGR
 image_angle=0
 
+//load resources
+global.systemfont=font_add(string(working_directory)+"Resources\\Roboto-Regular.ttf",)
+
 //secureBoot
 ini_open("users\\.root\\setupApp.config")
 gotoSetup=ini_read_real("setup","completed",0)
@@ -22,5 +25,5 @@ waitTime=ini_read_real("bootloader","bootmgtWaitTime",1)*60
 ini_close();
 
 ini_open(".system\\secure.key")
-encryptionKey=ini_read_real("system","secureKey",1234)
+encryptionKey=ini_read_real("system","secureKey",clamp(irandom(9999),1000,9999))
 ini_close()

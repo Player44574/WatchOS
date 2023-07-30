@@ -13,14 +13,14 @@ else{
 
 if draw=0{
 	//draw taskbar
-	draw_roundrect_color_ext(-1,global.ch-32,global.cw-1,global.ch+32,16,16,foregroundColor,foregroundColor,false)
+	draw_roundrect_color_ext(-1,global.ch-40,global.cw-1,global.ch+40,16,16,foregroundColor,foregroundColor,false)
 
 	//draw app icon
 	draw_set_alpha(1)
-	draw_circle(16,global.ch-16,12,false)
+	draw_circle(20,global.ch-20,16,false)
 	draw_set_color(foregroundColor)
 	draw_set_alpha(1)
-	draw_circle(16,global.ch-16,9,false)
+	draw_circle(20,global.ch-20,13,false)
 	draw_set_color(c_white)
 
 	//draw taskview 
@@ -34,7 +34,7 @@ if draw=0{
 	date=string(day)+"/"+string(month)+"/"+string(year)
 	draw_set_halign(fa_right)
 	draw_set_valign(fa_center)
-	draw_text_transformed(global.cw-8,global.ch-14,string(hour)+":"+string(minute)+"\n"+string(date),0.2,0.2,0)
+	draw_text_transformed(global.cw-8,global.ch-18,string(hour)+":"+string(minute)+"\n"+string(date),0.25,0.25,0)
 
 	draw_reset();
 }
