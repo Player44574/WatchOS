@@ -1,3 +1,0 @@
-terminalText=""
-terminalName=""
-output=""
