@@ -1,0 +1,155 @@
+[gd_scene load_steps=8 format=3 uid="uid://cd4g34vqvki1f"]
+
+[ext_resource type="Texture2D" uid="uid://bwwx72f0dma2l" path="res://Icons/games.svg" id="1_qioif"]
+[ext_resource type="Texture2D" uid="uid://dwski3x8bebft" path="res://Icons/apps.svg" id="2_h6t3u"]
+[ext_resource type="Script" path="res://Scenes/GamesButton.gd" id="3_8x7jj"]
+[ext_resource type="Texture2D" uid="uid://djqgnt5fvonuo" path="res://Icons/account-avatar-profile-user-12-svgrepo-com.svg" id="3_jq5bp"]
+[ext_resource type="Texture2D" uid="uid://cgxtwcjuihfw7" path="res://Icons/power-button-svgrepo-com.svg" id="5_0nau3"]
+[ext_resource type="Script" path="res://Scenes/TimeLabel.gd" id="8_53yix"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cswl2"]
+bg_color = Color(0.0588235, 0.0509804, 0.0745098, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0784314, 0.0705882, 0.0941176, 1)
+
+[node name="Bottom Bar" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -96.0
+offset_right = -32.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cswl2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Bottom Bar"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -52.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="GamesButton" type="Button" parent="Bottom Bar/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("1_qioif")
+flat = true
+icon_alignment = 1
+script = ExtResource("3_8x7jj")
+
+[node name="AppsButton" type="Button" parent="Bottom Bar/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("2_h6t3u")
+flat = true
+icon_alignment = 1
+
+[node name="UserButton" type="Button" parent="Bottom Bar/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("3_jq5bp")
+flat = true
+icon_alignment = 1
+
+[node name="PowerButton" type="Button" parent="Bottom Bar/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("5_0nau3")
+flat = true
+icon_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Bottom Bar"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1.0
+offset_bottom = 104.0
+grow_horizontal = 0
+theme_override_font_sizes/normal_font_size = 34
+bbcode_enabled = true
+script = ExtResource("8_53yix")
+
+[node name="Timer" type="Timer" parent="Bottom Bar"]
+
+[node name="Games View" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = -32.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cswl2")
+
+[node name="App View" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 124.0
+offset_top = 16.0
+offset_right = -20.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cswl2")
+
+[node name="Profile View" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 124.0
+offset_top = 16.0
+offset_right = -20.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cswl2")
+
+[node name="Power View" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 124.0
+offset_top = 16.0
+offset_right = -20.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cswl2")
+
+[connection signal="timeout" from="Bottom Bar/Timer" to="Bottom Bar/RichTextLabel" method="_on_timer_timeout"]

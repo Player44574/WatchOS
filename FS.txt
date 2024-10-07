@@ -1,0 +1,17 @@
+RaspmilyOS file system
+
+Root
+---Apps
+------ExampleApp.app
+---------ExampleApp.sh / ExampleApp.arm64
+---Games
+------ExampleGame.app
+---------ExampleGame.sh / ExampleGame.arm64
+---System
+------Shell.arm64
+---Temp
+---User
+------Videos
+------Music
+------Pictures
+------UserInfo.data

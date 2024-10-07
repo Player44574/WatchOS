@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbxxt5r03jtb5"]
+
+[ext_resource type="Script" path="res://Scenes/ReducedUI.gd" id="1_rqbbk"]
+[ext_resource type="Script" path="res://Scenes/TimeLabel.gd" id="2_hp0od"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g075j"]
+bg_color = Color(0.0588235, 0.0509804, 0.0745098, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[node name="ReducedUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rqbbk")
+
+[node name="TopBar" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = 20.0
+offset_right = -13.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g075j")
+
+[node name="BottomBar" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 16.0
+offset_top = -96.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g075j")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BottomBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -24.0
+offset_right = 64.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 34
+bbcode_enabled = true
+script = ExtResource("2_hp0od")
+
+[node name="Timer" type="Timer" parent="BottomBar"]
+wait_time = 60.0
+autostart = true
+
+[connection signal="timeout" from="BottomBar/Timer" to="BottomBar/RichTextLabel" method="_on_timer_timeout"]
