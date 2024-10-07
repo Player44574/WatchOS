@@ -1,0 +1,33 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://ct4m88ieadwnr"
+path="res://.godot/imported/Apocalypse Grunge.ttf-079b790e68d47fb2c61bf2f2ea134668.fontdata"
+
+[deps]
+
+source_file="res://Fonts/Apocalypse Grunge.ttf"
+dest_files=["res://.godot/imported/Apocalypse Grunge.ttf-079b790e68d47fb2c61bf2f2ea134668.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=1
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}
