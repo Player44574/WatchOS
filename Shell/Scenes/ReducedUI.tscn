@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cbxxt5r03jtb5"]
 
 [ext_resource type="Script" path="res://Scenes/ReducedUI.gd" id="1_rqbbk"]
-[ext_resource type="Script" path="res://Scenes/TimeLabel.gd" id="2_hp0od"]
+[ext_resource type="Script" path="res://Scenes/TimeLabelReduced.gd" id="2_6dpde"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g075j"]
 bg_color = Color(0.0588235, 0.0509804, 0.0745098, 1)
@@ -28,7 +28,7 @@ anchor_bottom = 1.0
 offset_left = 19.0
 offset_top = 20.0
 offset_right = -13.0
-offset_bottom = 100.0
+offset_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_g075j")
@@ -59,7 +59,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 34
 bbcode_enabled = true
-script = ExtResource("2_hp0od")
+script = ExtResource("2_6dpde")
 
 [node name="Timer" type="Timer" parent="BottomBar"]
 wait_time = 60.0

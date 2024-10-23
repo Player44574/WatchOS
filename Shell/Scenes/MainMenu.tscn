@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cd4g34vqvki1f"]
+[gd_scene load_steps=8 format=3 uid="uid://cd4g34vqvki1f"]
 
 [ext_resource type="Theme" uid="uid://cb7u67vldrkj2" path="res://Themes/Default_dark_theme.tres" id="1_h5ggs"]
 [ext_resource type="Texture2D" uid="uid://bgnc0baxbn5xa" path="res://ScreenSavers/Naturaleza/Natur1.jpg" id="2_6mpgq"]
 [ext_resource type="Texture2D" uid="uid://b3ad8aqjohp2x" path="res://Icons/startMenuIcon.svg" id="3_5413b"]
+[ext_resource type="Script" path="res://Scenes/Startbutton.gd" id="4_0g6bx"]
 [ext_resource type="Script" path="res://Scenes/TimeLabel.gd" id="8_53yix"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cswl2"]
@@ -88,6 +89,7 @@ theme_override_colors/icon_hover_color = Color(0.787759, 0.787759, 0.787759, 1)
 icon = ExtResource("3_5413b")
 flat = true
 icon_alignment = 1
+script = ExtResource("4_0g6bx")
 
 [node name="Taskbar items" type="HBoxContainer" parent="Bottom Bar/Taskbar"]
 layout_mode = 2
