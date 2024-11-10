@@ -1,0 +1,2 @@
+sudo apt update
+sudo apt install bc build-essential openssh-server clang libssl-dev libxrandr-dev libxxf86vm-dev libopenal-dev libgl1-mesa-dev libglu1-mesa-dev zlib1g-dev libcurl4-openssl-dev ffmpeg libfuse2 curl nproc pulseaudio -y
